@@ -1,3 +1,26 @@
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 6px 12px;
+    color:white;
+    background-color:#20488D;
+    text:white;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
 .zoomin img {
 height: 50px;
 width: 50px;

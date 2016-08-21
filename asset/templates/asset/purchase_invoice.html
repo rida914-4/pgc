@@ -17,135 +17,159 @@
         <div class="right_col" role="main">
             <div class="">
                 <!--<div class="page-title">-->
-                    <!--<div class="title_left">-->
-                        <!--<h3>-->
-                            <!--Asset Management-->
-                            <!--<small>-->
+                <!--<div class="title_left">-->
+                <!--<h3>-->
+                <!--Asset Management-->
+                <!--<small>-->
 
-                            <!--</small>-->
-                        <!--</h3>-->
-                    <!--</div>-->
+                <!--</small>-->
+                <!--</h3>-->
+                <!--</div>-->
 
 
-                </div>
-                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Purchase Invoice Detail
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Purchase Invoice Detail
 
-                                </h2>
-                                <div align="right">
-                                    <button type="button" class="btn btn-round btn-primary"
-                                            style="background:#A43780;border-color:#A43780;">
-                                        <span class="fa fa-plus" style="color:white;vertical-align:middle"></span> New
-                                        Invoice
-                                    </button>
-                                    <button type="button" class="btn btn-round btn-primary">
-                                        <span class="fa fa-plus" style="color:white;vertical-align:middle"></span>
-                                        View library
-                                    </button>
-                                    <button type="button" class="btn btn-round btn-primary"
-                                            style="background:#f0ad4e;border-color:#f0ad4e;text-align:center">
-                                        <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
-                                        Print
-                                    </button>
-                                    <button type="button" class="btn btn-round btn-success">
-                                        <span class="fa fa-remove" style="color:white;vertical-align:middle"></span>
-                                        Un-Post
-                                    </button>
-                                </div>
-                                <div class="clearfix"></div>
+                            </h2>
+                            <div align="right">
+                                <button type="button" class="btn btn-round btn-primary"
+                                        style="background:#A43780;border-color:#A43780;">
+                                    <span class="fa fa-plus" style="color:white;vertical-align:middle"></span> New
+                                    Invoice
+                                </button>
+                                <button type="button" class="btn btn-round btn-primary"
+                                        style="background:#f0ad4e;border-color:#f0ad4e;text-align:center">
+                                    <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
+                                    Print
+                                </button>
+                                <button type="button" class="btn btn-round btn-success">
+                                    <span class="fa fa-remove" style="color:white;vertical-align:middle"></span>
+                                    Un-Post
+                                </button>
                             </div>
-
-                            <div class="x_content">
-                                <p class="text-muted font-13 m-b-30">
-                                </p>
-                                <form class="form-horizontal form-label-left input_mask">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. ID</label>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="{{ acct_id }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Stock Description </label>
-                                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="text" class="form-control" readonly="readonly"
-                                                       placeholder="{{ stock_name }}">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher ID</label>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="{{ voucher_id }}">
-                                        </div>
-
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher Date </label>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="{{ voucher_date }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <p></p>
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Particulars</label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="{{ data.particulars }}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <p></p>
-                                    </div>
-                                    <div class="form-group">
-                                        <p></p>
-                                    </div>
-                                    <table class="table table-hover ">
-                                        <thead style="background-color:#9df0e0;">
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Stock Code</th>
-                                            <th>Details</th>
-                                            <th>Particulars</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% for data in invoice_data %}
-                                        <tr>
-                                            <th scope="row">{{forloop.counter}}</th>
-                                            <td>{{ data.stock_code }}</td>
-                                            <td>{{ data.component_name }}</td>
-                                            <td>{{ data.particulars }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                    </table>
-
-                                    </form>
-                                <div><h5>Add library</h5>
-                                            <form action="choices/form_upload" class="dropzone"
-                                                  style="border: 1px solid #e5e5e5; height: 300px; text-align:center"></form>
-                                        </div>
-                            </div>
+                            <div class="clearfix"></div>
                         </div>
 
+                        <div class="x_content">
+                            <p class="text-muted font-13 m-b-30">
+                            </p>
+                            <form class="form-horizontal form-label-left input_mask">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. ID</label>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly"
+                                               placeholder="{{ acct_id }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Stock
+                                            Description </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                   placeholder="{{ stock_name }}">
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher ID</label>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly"
+                                               placeholder="{{ voucher_id }}">
+                                    </div>
+
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher Date </label>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly"
+                                               placeholder="{{ voucher_date }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <p></p>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Particulars</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly"
+                                               placeholder="{{ data.particulars }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p></p>
+                                </div>
+                                <div class="form-group">
+                                    <p></p>
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <thead style="background-color:#9df0e0;">
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Stock Code</th>
+                                        <th>Details</th>
+                                        <th>Particulars</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for data in invoice_data %}
+                                    <tr>
+                                        <th scope="row">{{forloop.counter}}</th>
+                                        <td>{{ data.stock_code }}</td>
+                                        <td>{{ data.component_name }}</td>
+                                        <td>{{ data.particulars }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </form>
+                            <br><br>
+                            <div class="x_title" style="display:in-block;">
+                                <form method="POST" action="{{ voucher_id }}_Upload" enctype="multipart/form-data"
+                                      class="form-inline"> {% csrf_token %}
+<!-- Add jquery alert for only single file select incase of front pic -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                                    <div align="right">
+
+                                        <h4 style="display: inline; float:left">Add library</h4>
+                                        <div class="fileUpload btn btn-primary">
+                                            <span class="fa fa-camera" style="color:white;vertical-align:middle"></span><span>  Front Pic</span>
+                                            <input type="file" name="files" class="upload" style="display: inline;"
+                                                   multiple></div>
+
+                                        <div class="fileUpload btn btn-primary">
+                                            <span class="fa fa-qrcode" style="color:white;vertical-align:middle"></span><span>  Add library
+                                            </span>
+                                            <input type="file" name="files" class="upload" style="display: inline;"
+                                                   multiple></div>
+                                        <button type="submit" value="Upload" class="fileUpload btn btn-primary"
+                                                style="display: inline;">
+                                            <span class="fa fa-upload" style="color:white;vertical-align:middle"></span>
+                                            Upload
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
                     </div>
-                    <!-- /page content -->
                 </div>
-                {% include 'table.html' %}
             </div>
-        </div>
 
-    <!--</div>-->
+
+        </div>
+        <!-- /page content -->
+    </div>
+    {% include 'table.html' %}
+</div>
+</div>
+
+<!--</div>-->
 
 </div>
 </body>

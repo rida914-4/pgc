@@ -22,15 +22,18 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r'^purchase/(?P<voucher_id>\w+\d+)', views.purchase, name='purchase'),
+    url(r'^purchase/(?P<voucher_id>\w+\d+)$', views.purchase, name='purchase'),
     url(r'sales', views.index, name='index'),
     url(r'stock', views.index, name='index'),
     url(r'asset', views.asset, name='asset'),
     url(r'asset', views.asset, name='asset'),
     url(r'utils', views.index, name='index'),
     url(r'master', views.index, name='index'),
-    url(r'test', views.test, name='test'),
+    url(r'form', views.Form, name='form'),
+    url(r'purchase/(?P<voucher_id>\w+\d+)_Upload', views.Upload, name='Upload'),
 
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)

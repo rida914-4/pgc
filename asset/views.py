@@ -1,5 +1,8 @@
-from django.shortcuts import render, render_to_response
+import os
+from django.shortcuts import render, render_to_response, HttpResponse, HttpResponseRedirect
 from models import *
+from asset.forms import ProfileForm
+from asset.models import Profile
 # Create your views here.
 
 
@@ -38,8 +41,45 @@ def purchase(request, voucher_id):
                 'particulars': master_dic['particulars']
 
             }
-        return render_to_response('purchase_invoice.html', context)
+        return render(request, 'purchase_invoice.html', context)
 
 
-def test(request):
-    return render_to_response('test.html')
+def Form(request):
+    context = {
+        'rida': 'PL564646'
+    }
+    return render(request, 'formm.html', context)
+
+
+def singleUpload(request, voucher_id):
+    folder = '/home/rah/PycharmProjects/pgic/media/' + voucher_id + '/'
+    for count, x in enumerate(request.FILES.getlist("files")):
+        folder = '/home/rah/PycharmProjects/pgic/media/' + voucher_id + '/'
+
+        def process(f):
+            if not os.path.isdir(folder):
+                os.makedirs(folder)
+            with open(folder + voucher_id, 'wb+') as destination:
+                for chunk in f.chunks():
+                    destination.write(chunk)
+        if count == 0:
+            process(x)
+            continue
+    return HttpResponseRedirect('/purchase/' + voucher_id)
+
+
+def Upload(request, voucher_id):
+    for count, x in enumerate(request.FILES.getlist("files")):
+        folder = '/home/rah/PycharmProjects/pgic/media/' + voucher_id + '/'
+
+        def process(f):
+            if not os.path.isdir(folder):
+                os.makedirs(folder)
+            with open(folder + str(count), 'wb+') as destination:
+                for chunk in f.chunks():
+                    destination.write(chunk)
+        process(x)
+    return HttpResponseRedirect('/purchase/' + voucher_id)
+
+
+

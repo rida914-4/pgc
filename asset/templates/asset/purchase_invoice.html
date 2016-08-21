@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+
+
+<body class="nav-md">
+
+<div class="container body">
+
+
+    <div class="main_container">
+
+        {% include 'navbar.html' %}
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>
+                            Asset Management
+                            <small>
+
+                            </small>
+                        </h3>
+                    </div>
+
+
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Purchase Invoice Detail
+                                </h2>
+                                <div align="right">
+                                    <button type="button" class="btn btn-round btn-primary"
+                                            style="background:#A43780;border-color:#A43780;">
+                                        <span class="fa fa-plus" style="color:white;vertical-align:middle"></span> New
+                                        Invoice
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-primary">
+                                        <span class="fa fa-plus" style="color:white;vertical-align:middle"></span>
+                                        View library
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-primary"
+                                            style="background:#f0ad4e;border-color:#f0ad4e;text-align:center">
+                                        <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
+                                        Print
+                                    </button>
+                                    <button type="button" class="btn btn-round btn-success">
+                                        <span class="fa fa-remove" style="color:white;vertical-align:middle"></span>
+                                        Un-Post
+                                    </button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <p class="text-muted font-13 m-b-30">
+                                </p>
+                                <form class="form-horizontal form-label-left input_mask">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. ID</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                   placeholder="Default Input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. Name </label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <input type="text" class="form-control" readonly="readonly"
+                                                       placeholder="Default Input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher ID</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                   placeholder="{{ voucher_id }}">
+                                        </div>
+
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher Name </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                   placeholder="Default Input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <p></p>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Particulars</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" class="form-control" readonly="readonly"
+                                                   placeholder="Read-Only Input">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <p></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <p></p>
+                                    </div>
+                                    <table class="table table-hover ">
+                                        <thead style="background-color:#9df0e0;">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Stock Code</th>
+                                            <th>Details</th>
+                                            <th>Particulars</th>
+                                            <th>Quantity</th>
+                                            <th>Rate</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>Mark</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    </form>
+                                <div><h5>Add library</h5>
+                                            <form action="choices/form_upload" class="dropzone"
+                                                  style="border: 1px solid #e5e5e5; height: 300px; text-align:center"></form>
+                                        </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- /page content -->
+                </div>
+                {% include 'table.html' %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+{% include 'footer.html' %}

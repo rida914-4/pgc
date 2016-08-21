@@ -266,58 +266,11 @@ class PlInvoice(models.Model):
     posted = models.CharField(max_length=2, blank=True, null=True)
     pos_code = models.CharField(max_length=10, blank=True, null=True)
     cust_id = models.CharField(max_length=4, blank=True, null=True)
+    id = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'pl_invoice'
-
-
-class PlInvoice2(models.Model):
-    voucher_id = models.CharField(max_length=10, blank=True, null=True)
-    voucher_date = models.DateField(blank=True, null=True)
-    acct_id = models.CharField(max_length=4, blank=True, null=True)
-    disc_amt = models.FloatField(blank=True, null=True)
-    dc_amt = models.FloatField(blank=True, null=True)
-    net_amt = models.FloatField(blank=True, null=True)
-    po_no = models.CharField(max_length=30, blank=True, null=True)
-    po_date = models.DateField(blank=True, null=True)
-    dc_no = models.CharField(max_length=10, blank=True, null=True)
-    dc_date = models.DateField(blank=True, null=True)
-    igp_no = models.CharField(max_length=10, blank=True, null=True)
-    igp_date = models.DateField(blank=True, null=True)
-    bill_no = models.CharField(max_length=10, blank=True, null=True)
-    bill_date = models.DateField(blank=True, null=True)
-    inv_no = models.CharField(max_length=30, blank=True, null=True)
-    inv_date = models.DateField(blank=True, null=True)
-    bilty_no = models.CharField(max_length=30, blank=True, null=True)
-    adda_name = models.CharField(max_length=30, blank=True, null=True)
-    loc_id = models.CharField(max_length=2, blank=True, null=True)
-    particulars = models.CharField(max_length=200, blank=True, null=True)
-    post_date = models.DateField(blank=True, null=True)
-    ut = models.CharField(max_length=2, blank=True, null=True)
-    sp_id = models.CharField(max_length=7, blank=True, null=True)
-    po_id = models.CharField(max_length=10, blank=True, null=True)
-    discp = models.FloatField(blank=True, null=True)
-    project = models.CharField(max_length=2, blank=True, null=True)
-    service = models.CharField(max_length=2, blank=True, null=True)
-    adv_amt = models.FloatField(blank=True, null=True)
-    brand_id = models.CharField(max_length=4, blank=True, null=True)
-    address = models.CharField(max_length=200, blank=True, null=True)
-    sms_no = models.CharField(max_length=15, blank=True, null=True)
-    comp_id = models.CharField(max_length=2, blank=True, null=True)
-    year_id = models.CharField(max_length=2, blank=True, null=True)
-    posted = models.CharField(max_length=2, blank=True, null=True)
-    customer_name = models.CharField(max_length=255, blank=True, null=True)
-    customer_phone = models.BigIntegerField(blank=True, null=True)
-    customer_cash = models.FloatField(blank=True, null=True)
-    return_cash = models.FloatField(blank=True, null=True)
-    bill_type = models.CharField(max_length=7, blank=True, null=True)
-    pos_code = models.CharField(max_length=10, blank=True, null=True)
-    cust_id = models.CharField(max_length=4, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'pl_invoice_2'
 
 
 class PlInvoicedet(models.Model):
@@ -345,19 +298,8 @@ class Positions(models.Model):
         db_table = 'positions'
 
 
-class TPlInvoice(models.Model):
-    voucher_id = models.CharField(max_length=10, blank=True, null=True)
-    voucher_date = models.DateField(blank=True, null=True)
-    description = models.CharField(max_length=100, blank=True, null=True)
-    pos_name = models.CharField(max_length=100, blank=True, null=True)
-    cust_name = models.CharField(max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 't_pl_invoice'
-
-
 class TPlInvoicedet(models.Model):
+    id = models.BigIntegerField(blank=True, null=True)
     voucher_id = models.CharField(max_length=10, blank=True, null=True)
     voucher_date = models.DateField(blank=True, null=True)
     acct_id = models.CharField(max_length=4, blank=True, null=True)
@@ -372,6 +314,7 @@ class TPlInvoicedet(models.Model):
     cust_name = models.CharField(max_length=100, blank=True, null=True)
     stock_code = models.CharField(max_length=13, blank=True, null=True)
     stock_name = models.CharField(max_length=100, blank=True, null=True)
+    component_name = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False

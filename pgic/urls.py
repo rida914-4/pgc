@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'asset', views.asset, name='asset'),
     url(r'utils', views.index, name='index'),
     url(r'master', views.index, name='index'),
-    url(r'', views.index, name='index'),
+    url(r'test', views.test, name='test'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

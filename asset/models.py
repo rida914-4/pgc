@@ -358,8 +358,20 @@ class PlInvoicedet(models.Model):
         unique_together = (('voucher', 'lineitem'),)
 
 
+# CREATE OR REPLACE FORCE VIEW "PGC_AM"."V_PL_INVOICEDET" ("ID", "VOUCHER_ID", "VOUCHER_DATE", "ACCT_ID", "NET_AMT", "PARTICULARS", "POST_DATE", "ADDRESS", "POSTED", "POS_CODE", "CUST_ID", "POS_NAME", "CUST_NAME", "STOCK_CODE", "STOCK_NAME") AS
+#   SELECT
+# v."ID",v."VOUCHER_ID",v."VOUCHER_DATE",v."ACCT_ID",v."NET_AMT",v."PARTICULARS",v."POST_DATE",v."ADDRESS",v."POSTED",v."POS_CODE",v."CUST_ID", p.description pos_name, c.description cust_name,
+# d.stock_code,
+# i.description stock_name
+# FROM pl_invoice v, PL_INVOICEDET d, item i , positions p, custodian c
+# where v.voucher_id = d.voucher_id
+# and v.acct_id = i.stock_code
+# and v.pos_code=p.pos_code
+# and v.cust_id=c.ACCT_ID
+
+
 class VPlInvoicedet(models.Model):
-    voucher_id = models.CharField(max_length=10, blank=True, null=True)
+    voucher_id = models.CharField(max_length=10, blank=True, null=True, primary_key=True)
     voucher_date = models.DateField(blank=True, null=True)
     acct_id = models.CharField(max_length=4, blank=True, null=True)
     net_amt = models.FloatField(blank=True, null=True)
@@ -373,10 +385,15 @@ class VPlInvoicedet(models.Model):
     cust_name = models.CharField(max_length=100, blank=True, null=True)
     stock_code = models.CharField(max_length=13, blank=True, null=True)
     stock_name = models.CharField(max_length=100, blank=True, null=True)
+    id = models.BigIntegerField(blank=True, null=True)
+    component_name = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 't_pl_invoicedet'
+        db_table = 'v_pl_invoicedet'
+
+    # def __str__(self):
+    #     return self.voucher_id, self.voucher_date
 
 
 class Positions(models.Model):

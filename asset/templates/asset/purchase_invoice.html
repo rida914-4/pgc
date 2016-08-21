@@ -16,15 +16,15 @@
         {% include 'navbar.html' %}
         <div class="right_col" role="main">
             <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>
-                            Asset Management
-                            <small>
+                <!--<div class="page-title">-->
+                    <!--<div class="title_left">-->
+                        <!--<h3>-->
+                            <!--Asset Management-->
+                            <!--<small>-->
 
-                            </small>
-                        </h3>
-                    </div>
+                            <!--</small>-->
+                        <!--</h3>-->
+                    <!--</div>-->
 
 
                 </div>
@@ -36,6 +36,7 @@
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Purchase Invoice Detail
+
                                 </h2>
                                 <div align="right">
                                     <button type="button" class="btn btn-round btn-primary"
@@ -59,22 +60,22 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+
                             <div class="x_content">
                                 <p class="text-muted font-13 m-b-30">
                                 </p>
                                 <form class="form-horizontal form-label-left input_mask">
-
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. ID</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="Default Input">
+                                                   placeholder="{{ acct_id }}">
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Acct. Name </label>
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Stock Description </label>
                                             <div class="col-md-3 col-sm-3 col-xs-12">
                                                 <input type="text" class="form-control" readonly="readonly"
-                                                       placeholder="Default Input">
+                                                       placeholder="{{ stock_name }}">
                                             </div>
                                         </div>
                                     </div>
@@ -86,10 +87,10 @@
                                                    placeholder="{{ voucher_id }}">
                                         </div>
 
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher Name </label>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher Date </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="Default Input">
+                                                   placeholder="{{ voucher_date }}">
                                         </div>
                                     </div>
 
@@ -98,10 +99,9 @@
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Particulars</label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type="text" class="form-control" readonly="readonly"
-                                                   placeholder="Read-Only Input">
+                                                   placeholder="{{ data.particulars }}">
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <p></p>
                                     </div>
@@ -115,21 +115,17 @@
                                             <th>Stock Code</th>
                                             <th>Details</th>
                                             <th>Particulars</th>
-                                            <th>Quantity</th>
-                                            <th>Rate</th>
-                                            <th>Amount</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        {% for data in invoice_data %}
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Mark</td>
+                                            <th scope="row">{{forloop.counter}}</th>
+                                            <td>{{ data.stock_code }}</td>
+                                            <td>{{ data.component_name }}</td>
+                                            <td>{{ data.particulars }}</td>
                                         </tr>
+                                        {% endfor %}
                                         </tbody>
                                     </table>
 
@@ -149,7 +145,7 @@
             </div>
         </div>
 
-    </div>
+    <!--</div>-->
 
 </div>
 </body>

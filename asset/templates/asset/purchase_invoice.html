@@ -5,15 +5,15 @@
 
 {% include 'head.html' %}
 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    {% include 'navbar.html' %}
 
-<body class="nav-md">
+    <div class="content-wrapper">
+        <div class="container body">
+            <div class="main_container">
 
-<div class="container body">
 
-
-    <div class="main_container">
-
-        {% include 'navbar.html' %}
         <div class="right_col" role="main">
             <div class="">
                 <!--<div class="page-title">-->
@@ -39,13 +39,14 @@
 
                             </h2>
                             <div align="right">
-                                <button type="button" class="btn btn-round btn-primary"
-                                        style="background:#A43780;border-color:#A43780;">
+                                <a type="submit" class="btn btn-round btn-primary"
+                                   style="background:#A43780;border-color:#A43780;" href="new_invoice">
                                     <span class="fa fa-plus" style="color:white;vertical-align:middle"></span> New
                                     Invoice
-                                </button>
+                                </a>
                                 <button type="button" class="btn btn-round btn-primary"
-                                        style="background:#f0ad4e;border-color:#f0ad4e;text-align:center">
+                                        style="background:#f0ad4e;border-color:#f0ad4e;text-align:center"
+                                        onclick="window.print();">
                                     <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
                                     Print
                                 </button>
@@ -127,33 +128,154 @@
                                 </table>
 
                             </form>
-                            <br><br>
+                            <br>
                             <div class="x_title" style="display:in-block;">
-                                <form method="POST" action="{{ voucher_id }}_Upload" enctype="multipart/form-data"
-                                      class="form-inline"> {% csrf_token %}
-<!-- Add jquery alert for only single file select incase of front pic -->
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                                    <div align="right">
+                                <div class="x_title"><h4 style="display: inline; float:left">Image Library</h4>
 
-                                        <h4 style="display: inline; float:left">Add library</h4>
-                                        <div class="fileUpload btn btn-primary">
-                                            <span class="fa fa-camera" style="color:white;vertical-align:middle"></span><span>  Front Pic</span>
-                                            <input type="file" name="files" class="upload" style="display: inline;"
-                                                   multiple></div>
-
-                                        <div class="fileUpload btn btn-primary">
-                                            <span class="fa fa-qrcode" style="color:white;vertical-align:middle"></span><span>  Add library
+                                    <div align="right" class="row">
+                                        <div style="display: inline; ">
+                                            <form method="POST" action="upload" enctype="multipart/form-data"
+                                                  class="form-inline form-horizontal"
+                                                  style="float: right; padding: 5px;">
+                                                {% csrf_token %}
+                                                <div class="btn-group">
+                                                    <div class="fileUpload btn btn-primary">
+                                                <span class="fa fa-camera"
+                                                      style="color:white;vertical-align:middle"></span><span> Attach Front Pic</span>
+                                                        <input id="voucher" type="hidden" name="voucher_id"
+                                                               value="{{ voucher_id }}">
+                                                        <input id="asset-front" type="hidden" name="folder_type"
+                                                               value="asset-front">
+                                                        <input type="file" name="files" class="upload"
+                                                               value="asset_front"
+                                                               style="display: inline;"
+                                                               multiple></div>
+                                                    <button type="submit" value="upload"
+                                                            class="fileUpload btn btn-success"
+                                                            style="display: inline; background-color:#800080; border: 1px solid #800080;">
+                                                <span class="fa fa-upload"
+                                                      style="color:white;vertical-align:middle"></span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                            <form id="lib" method="POST" action="upload" enctype="multipart/form-data"
+                                                  class="form-inline form-horizontal"
+                                                  style="float: right; padding: 5px;">
+                                                {% csrf_token %}
+                                                <div class="btn-group">
+                                                    <div class="fileUpload btn btn-primary"
+                                                         style="background-color:#254117; border: 1px solid #254117;">
+                                                <span class="fa fa-qrcode"
+                                                      style="color:white;vertical-align:middle;"></span><span>  Attach library
                                             </span>
-                                            <input type="file" name="files" class="upload" style="display: inline;"
-                                                   multiple></div>
-                                        <button type="submit" value="Upload" class="fileUpload btn btn-primary"
-                                                style="display: inline;">
-                                            <span class="fa fa-upload" style="color:white;vertical-align:middle"></span>
-                                            Upload
-                                        </button>
+                                                        <input type="hidden" name="voucher_id"
+                                                               value="{{ voucher_id }}">
+
+                                                        <input type="file" name="files" class="upload" value="asset_lib"
+                                                               style="display: inline;"
+                                                               multiple></div>
+                                                    <input id="asset-lib" type="hidden" name="folder_type"
+                                                           value="asset-lib">
+                                                    <button type="submit" value="upload"
+                                                            class="fileUpload btn btn-success"
+                                                            style="display: inline; background-color:#800080; border: 1px solid #800080;">
+                                                <span class="fa fa-upload"
+                                                      style="color:white;vertical-align:middle"></span>
+
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
 
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="demo-gallery">
+                                    {% static "" as baseUrl %}
+                                    <ul id="lightgallery" class="list-unstyled row">
+                                        {% for imagefront_list in imagefront_listt %}
+                                         <li class="col-xs-6 col-sm-4 col-md-3"
+                                            data-responsive="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 480, {% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 800"
+                                            data-src="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %}"
+                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                            <a href="">
+
+                                                <img style="height: 120px; width: 200px;" class="img-responsive" src="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %}">
+
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                        {% for im in imagelib_list %}
+                                        <li class="col-xs-6 col-sm-4 col-md-3"
+
+                                            data-responsive="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 480, {% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 800"
+                                            data-src="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %}"
+                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                            <a href="">
+                                                <img class="img-responsive" style="height: 120px; width: 200px;"
+                                                     src="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %}">
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                                <form id="bill" method="POST" action="upload" enctype="multipart/form-data" class="form-inline">
+                                    {% csrf_token %}
+                                    <div class="x_title">
+                                        <div align="right">
+
+                                            <h4 style="display: inline; float:left">Bill Library </h4>
+                                            <div class="btn-group">
+                                                <div class="fileUpload btn btn-primary"
+                                                     style="background-color:#3B3131; border: 1px solid #3B3131;">
+                                                    <input id="voucher_bill" type="hidden" name="voucher_id"
+                                                               value="{{ voucher_id }}">
+                                                        <input id="asset_bills" type="hidden" name="folder_type"
+                                                               value="asset_bills">
+                                                <span class="fa fa-qrcode"
+                                                      style="color:white;vertical-align:middle"></span><span>  Attach Bill
+                                            </span>
+                                                    <input id="upload_bill" type="file" name="files" class="upload"
+                                                           style="display: inline;"
+                                                           multiple></div>
+                                                <button type="submit" value="upload" class="fileUpload btn btn-primary"
+                                                        style="display: inline;background-color:#EAC117; border: 1px solid #EAC117;">
+                                                <span class="fa fa-upload"
+                                                      style="color:white;vertical-align:middle"></span>
+
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </form>
+                                <div class="demo-gallery">
+                                    {% static "" as baseUrl %}
+                                    <ul id="lightgallery1" class="list-unstyled row">
+                                        {% for im in imagebill_list %}
+                                        <li class="col-xs-6 col-sm-4 col-md-3"
+                                            data-responsive="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %} 480, {% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %} 800"
+                                            data-src="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %}"
+                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                            <a href="">
+                                                <img class="img-responsive" style="height: 120px; width: 200px;"
+                                                     src="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %}">
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                                <script type="text/javascript">
+                                    $(document).ready(function(){
+                                        $('#lightgallery').lightGallery();
+                                        $('#lightgallery1').lightGallery();
+                                    });
+
+                                </script>
+
                             </div>
 
                         </div>
@@ -165,12 +287,57 @@
         </div>
         <!-- /page content -->
     </div>
-    {% include 'table.html' %}
+
 </div>
-</div>
+<script type="text/javascript">
+    $(document).on('submit','#billl',function(e){
+        e.preventDefault();
+        var files_to_upload = new FormData();
+        jQuery.each(jQuery('#upload_bill')[0].files, function(i, upload_bill) {
+            files_to_upload.append('upload_bill-'+i, upload_bill);
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'upload',
+            proccessData: false,
+            contentType: false,
+            data:{
+                voucher_id:$('#voucher_bill').val(),
+                folder_type:$('#asset_bills').val(),
+                files_to_upload:$('#upload_bill').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            },
+            success:function(){
+                alert('yo!')
+            }
+
+        });
+
+    });
+
+# when user presses back button
+
+jQuery(document).ready(function($) {
+
+if (window.history && window.history.pushState) {
+
+window.history.pushState(‘forward’, null, ‘./#forward’);
+
+$(window).on(‘popstate’, function() {
+window.location.href = “www.google.com”;
+});
+
+}
+});
+</script>
+
+
 
 <!--</div>-->
-
 </div>
+    </div>
 </body>
+{% include 'table.html' %}
 {% include 'footer.html' %}
+</html>

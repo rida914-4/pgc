@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST" action="url" enctype="multipart/form-data" class="form-inline"> {% csrf_token %}
+    <input id="your_name" type="text" name="your_name" value="asset-bill">
+    <input type="file" name="file" class="upload" style="display: inline;" value="asset-bill" multiple>
+    <button type="submit" value="upload" class="fileUpload"></button>
+</form>
+
+</body>
+</html>

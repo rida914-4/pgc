@@ -288,6 +288,7 @@ class VPlInvoice(models.Model):
     description = models.CharField(max_length=100, blank=True, null=True)
     pos_name = models.CharField(max_length=100, blank=True, null=True)
     cust_name = models.CharField(max_length=100, blank=True, null=True)
+    acct_id = models.CharField(max_length=4, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -22,15 +22,32 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    # url(r'^new_user', views.create),
     url(r'^purchase/(?P<voucher_id>\w+\d+)$', views.purchase, name='purchase'),
     url(r'sales', views.index, name='index'),
     url(r'stock', views.index, name='index'),
-    url(r'asset', views.asset, name='asset'),
-    url(r'asset', views.asset, name='asset'),
+    url(r'^invoice$', views.invoice, name='invoice'),
     url(r'utils', views.index, name='index'),
     url(r'master', views.index, name='index'),
     url(r'form', views.Form, name='form'),
-    url(r'purchase/(?P<voucher_id>\w+\d+)_Upload', views.Upload, name='Upload'),
+    # url(r'purchase', views.purchase),
+    url(r'upload', views.copy_of_upload),
+    url(r'pdf', views.pdf_report),
+    url(r'new_invoice', views.new_invoice),
+
+
+
+    #
+    # url(r'create/$', views.post_create),
+    # url(r'detail/$', views.post_detail),
+    # url(r'list/$', views.post_list),
+    # url(r'update/$', views.post_update),
+    # url(r'delete/$', views.post_delete),
+    url(r'your-name', views.get_name),
+    url(r'thanks', views.index),
+    url(r'url', views.upload_file),
+    url(r'/success/url/', views.test),
+    url(r'thanks', views.index),
 
 
 ]

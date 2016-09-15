@@ -48,7 +48,7 @@
                                             {% static "" as baseUrl %}
                                             <td>
                                                 <div class="zoomin">
-                                                    <img src="{{ baseUrl }}assets/pics/{{ asset.voucher_id }}.jpg"
+                                                    <img src="{% with 'asset/front/'|add:asset.voucher_id|add:'/'|add:asset.voucher_id|add:'_0' as image_static %}{% static image_static %}{% endwith %}"
                                                          height="50px" width="50px"
                                                          onerror="this.src='{{ baseUrl }}images/noimage.png'">
                                                 </div>
@@ -71,7 +71,7 @@
                                             <td>{{ asset.cust_name }}</td>
                                             <td>
                                                 <div class="zoomin">
-                                                    <img src="{{ baseUrl }}assets/bills/{{ asset.voucher_id }}.jpg"
+                                                    <img src="{% with 'asset/bills/'|add:asset.voucher_id|add:'/'|add:asset.voucher_id|add:'_0' as image_static %}{% static image_static %}{% endwith %}"
                                                          height="50px" width="50px"
                                                          onerror="this.src='{{ baseUrl }}images/noimage.png'">
                                                 </div>

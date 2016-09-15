@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load static %}
+{% load crispy_forms_tags %}
 <html lang="en">
 
 {% include 'head.html' %}
@@ -12,9 +13,33 @@
 
 <form action="/your-name/" method="post">
     {% csrf_token %}
-    <label for="your_name">Your name: </label><input id="your_name" type="hidden" name="your_name" value="asset-bill">
 
     <input type="submit" value="Submit" />
+</form>
+
+ <form action="/contact/" method="post">
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.subject.errors }}
+        <label for="id_subject">Email subject:</label>
+        {{ form.subject }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.message.errors }}
+        <label for="id_message">Your message:</label>
+        {{ form.message }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.sender.errors }}
+        <label for="id_sender">Your email address:</label>
+        {{ form.sender }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.cc_myself.errors }}
+        <label for="id_cc_myself">CC yourself?</label>
+        {{ form.cc_myself }}
+    </div>
+    <p><input type="submit" value="Send message" /></p>
 </form>
 <!--<form action="new_user" method="post">{% csrf_token %}-->
  <!--<input type="text" name="first_name">-->

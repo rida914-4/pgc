@@ -8,14 +8,15 @@ from django.core.urlresolvers import reverse
 
 from models import *
 from generic import *
-# Create your views here.
+# Create +----------------------------- views here.
 import magic
 import logging
 from reportlab.pdfgen import canvas
 from .forms import NameForm, UploadFileForm
 from django.views.generic.edit import FormView
 from .forms import FileFieldForm
-
+from django.core.mail import send_mail
+from models import Item
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 media_path = os.path.join(BASE_DIR, 'media')
 static_path = os.path.join(BASE_DIR, 'static')
@@ -314,12 +315,54 @@ def get_name(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            logger.info('form info is %s', form.cleaned_data['your_name'])
+            data = form.cleaned_data
+            logger.info('FORM INFO')
+            logger.info('form info date is %s ', data)
+            subject = form.cleaned_data['new_date']
+            message = form.cleaned_data['item_combo']
+            logger.info('item combo is %s ', form.cleaned_data.get('item_combo'))
+            # logger.info('form info vid is %s ', data['new_vid'])
+            # logger.info('form info item is %s ', data['item_combo'])
+            # logger.info('form info parc %s ', data['new_parc'])
             # redirect to a new URL:
+            logger.info('redirecting -----------------------')
             return HttpResponseRedirect('/thanks/')
-
+        else:
+            logger.error('Form is invalid. Errors are %s', form.errors)
     # if a GET (or any other method) we'll create a blank form
     else:
         form = NameForm()
+        logger.error('Form has GET request. Errors are %s', form.errors)
 
-    return render(request, 'test.html', {'form': form})
+    return render(request, 'form.html', {'form': form})
+
+
+def post_new(request):
+    form = NameForm()
+    if request.method == 'POST':
+        if form.is_valid():
+            post = form.save(commit=False)
+            #  add more fields which are not present in the form
+            # post.author = request.user
+            # post.published_date = timezone.now()
+            # post.save()
+            return redirect('/thanks/', pk=post.pk)
+    else:
+        form = NameForm()
+        logger.error('Form has GET request. Errors are %s', form.errors)
+    return render(request, 'form.html', {'form': form})
+
+
+def post_edit(request, pk):
+    post = get_object_or_404(Item, pk=pk)
+    if request.method == "POST":
+        form = NameForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            # post.author = request.user
+            # post.published_date = timezone.now()
+            # post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = NameForm(instance=post)
+    return render(request, 'blog/post_edit.html', {'form': form})

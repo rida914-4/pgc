@@ -1,0 +1,26 @@
+ <html>
+{% load staticfiles %}
+{% load static %}
+{% include 'head.html' %}
+
+ <h1>New post</h1>
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    <div class="fieldWrapper">
+        {{ form.subject.errors }}
+        <label for="{{ form.new_date.id_for_label }}">Date</label>
+        {{ form.new_date }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.new_vid.errors }}
+        <label for="{{ form.new_date.id_for_label }}">Voucher ID</label>
+        {{ form.new_vid }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.new_parc.errors }}
+        <label for="{{ form.new_date.id_for_label }}">Particulars</label>
+        {{ form.new_parc }}
+    </div>
+
+
+ </html>

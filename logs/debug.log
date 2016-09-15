@@ -5438,3 +5438,1025 @@ IOError: [Errno 2] No such file or directory: u'/home/rah/PycharmProjects/pgic/m
 2016-09-14 15:27:16,861 purchase INFO acct_id 0128--------------------------------------------,
 2016-09-14 15:27:16,861 purchase INFO master dic done
 2016-09-14 15:27:16,861 purchase INFO {'acct_id': u'0128', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Pentium 4', 'imagefront_listt': [], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL01060156', 'voucher_date': datetime.date(2016, 6, 10), 'imagelib_list': [], 'particulars': u''}
+2016-09-14 16:51:19,986 get_response WARNING Not Found: /favicon.ico
+2016-09-14 16:51:20,005 get_response WARNING Not Found: /favicon.ico
+2016-09-14 18:36:51,263 get_response WARNING Not Found: /favicon.ico
+2016-09-14 18:36:51,296 get_response WARNING Not Found: /favicon.ico
+2016-09-14 19:04:41,449 get_response WARNING Not Found: /favicon.ico
+2016-09-14 19:04:41,469 get_response WARNING Not Found: /favicon.ico
+2016-09-14 21:59:15,016 index INFO Launching pgc
+2016-09-14 21:59:19,353 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-14 21:59:21,998 purchase INFO First purchase method PL01060288
+2016-09-14 21:59:21,998 purchase INFO Getting voucher id from post request PL01060288
+2016-09-14 21:59:22,060 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-14 21:59:22,060 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-14 21:59:22,060 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-14 21:59:22,060 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-14 21:59:22,060 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-14 21:59:22,060 purchase INFO master dic done
+2016-09-14 21:59:22,060 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-14 22:00:39,716 get_response WARNING Not Found: /purchase/get_name
+2016-09-14 22:00:54,708 get_response WARNING Not Found: /purchase/get_name
+2016-09-14 22:01:03,276 get_response WARNING Not Found: /purchase/get_name
+2016-09-14 22:01:09,979 get_response WARNING Not Found: /purchase/get_name
+2016-09-14 22:01:26,371 get_response WARNING Not Found: /purchase/get_name
+2016-09-14 22:01:41,738 get_response WARNING Not Found: /your-name/
+2016-09-14 22:08:59,457 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>your_name<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:13:45,236 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:14:03,865 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:14:56,399 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 314, in get_name
+    logger.info('form info is %s', form.cleaned_data['new_date'])
+AttributeError: 'NameForm' object has no attribute 'cleaned_data'
+2016-09-14 22:15:14,507 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 314, in get_name
+    logger.info('form info is %s', form.get['new_date'])
+AttributeError: 'NameForm' object has no attribute 'get'
+2016-09-14 22:15:24,937 get_name INFO form info is <input id="id_new_date" name="new_date" type="text" />
+2016-09-14 22:15:24,938 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:17:25,708 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:17:46,739 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-14 22:22:20,708 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>Your Name is Required</li></ul></li></ul>
+2016-09-14 22:22:37,452 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>Your Name is Required</li></ul></li></ul>
+2016-09-14 22:30:52,700 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>item_combo<ul class="errorlist"><li>Item is Required</li></ul></li><li>new_date<ul class="errorlist"><li>Your Name is Required</li></ul></li></ul>
+2016-09-14 22:31:18,921 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>item_combo<ul class="errorlist"><li>Item is Required</li></ul></li></ul>
+2016-09-14 22:31:43,898 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>item_combo<ul class="errorlist"><li>Item is Required</li></ul></li></ul>
+2016-09-14 22:31:57,788 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>item_combo<ul class="errorlist"><li>Item is Required</li></ul></li></ul>
+2016-09-14 22:36:56,245 get_name INFO form info is 
+2016-09-14 22:36:56,248 index INFO Launching pgc
+2016-09-14 22:37:42,318 get_name INFO FORM INFO
+2016-09-14 22:37:42,318 get_name INFO form info is 
+2016-09-14 22:37:42,322 index INFO Launching pgc
+2016-09-14 22:38:01,729 get_name INFO FORM INFO
+2016-09-14 22:38:01,729 get_name INFO form info is 
+2016-09-14 22:38:01,732 index INFO Launching pgc
+2016-09-14 22:40:04,204 get_name INFO FORM INFO
+2016-09-14 22:40:04,204 get_name INFO form info is 
+2016-09-14 22:40:04,206 index INFO Launching pgc
+2016-09-14 22:40:16,184 get_name INFO FORM INFO
+2016-09-14 22:40:16,185 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 318, in get_name
+    logger.info('form info is %s', form.cleaned_data['id_new_parc'])
+KeyError: 'id_new_parc'
+2016-09-14 22:40:32,038 get_name INFO FORM INFO
+2016-09-14 22:40:32,039 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 318, in get_name
+    logger.info('form info is %s', form.cleaned_data['id_new_parc'])
+KeyError: 'id_new_parc'
+2016-09-14 22:40:53,294 get_name INFO FORM INFO
+2016-09-14 22:40:53,295 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 318, in get_name
+    logger.info('form info is %s', form.cleaned_data['id_new_parc'])
+KeyError: 'id_new_parc'
+2016-09-14 22:41:34,952 get_name INFO FORM INFO
+2016-09-14 22:41:34,952 get_name INFO form info is 
+2016-09-14 22:41:34,956 index INFO Launching pgc
+2016-09-14 22:43:01,327 get_name INFO FORM INFO
+2016-09-14 22:43:01,327 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 319, in get_name
+    for k, v in data:
+ValueError: too many values to unpack
+2016-09-14 22:43:18,032 get_name INFO FORM INFO
+2016-09-14 22:43:18,058 index INFO Launching pgc
+2016-09-14 22:43:48,095 get_name INFO FORM INFO
+2016-09-14 22:43:48,099 index INFO Launching pgc
+2016-09-14 22:44:26,084 get_name INFO FORM INFO
+2016-09-14 22:44:26,088 index INFO Launching pgc
+2016-09-14 22:45:08,759 get_name INFO FORM INFO
+2016-09-14 22:45:08,764 index INFO Launching pgc
+2016-09-14 22:45:41,738 get_name INFO FORM INFO
+2016-09-14 22:45:41,741 index INFO Launching pgc
+2016-09-14 22:46:08,289 get_name INFO FORM INFO
+2016-09-14 22:46:08,293 index INFO Launching pgc
+2016-09-14 22:46:37,568 get_name INFO FORM INFO
+2016-09-14 22:46:37,570 get_name INFO redirecting
+2016-09-14 22:46:37,573 index INFO Launching pgc
+2016-09-14 22:46:53,195 get_name INFO FORM INFO
+2016-09-14 22:46:53,195 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:46:53,196 get_name INFO redirecting
+2016-09-14 22:46:53,199 index INFO Launching pgc
+2016-09-14 22:47:09,722 get_name INFO FORM INFO
+2016-09-14 22:47:09,722 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:47:09,722 get_name INFO redirecting
+2016-09-14 22:47:09,726 index INFO Launching pgc
+2016-09-14 22:47:35,280 get_name INFO FORM INFO
+2016-09-14 22:47:35,280 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:47:35,280 get_name INFO redirecting -----------------------
+2016-09-14 22:47:35,283 index INFO Launching pgc
+2016-09-14 22:47:53,181 get_name INFO FORM INFO
+2016-09-14 22:47:53,182 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:47:53,182 get_name INFO redirecting -----------------------
+2016-09-14 22:47:53,184 index INFO Launching pgc
+2016-09-14 22:48:14,849 get_name INFO FORM INFO
+2016-09-14 22:48:14,849 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:48:14,850 get_name INFO form info is new_parc 
+2016-09-14 22:48:14,850 get_name INFO redirecting -----------------------
+2016-09-14 22:48:14,852 index INFO Launching pgc
+2016-09-14 22:48:42,959 get_name INFO FORM INFO
+2016-09-14 22:48:42,960 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:48:42,960 handle_uncaught_exception ERROR Internal Server Error: /purchase/get_name
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 324, in get_name
+    for k,v  in data:
+ValueError: too many values to unpack
+2016-09-14 22:48:54,353 get_name INFO FORM INFO
+2016-09-14 22:48:54,353 get_name INFO form info is {'new_parc': u''} 
+2016-09-14 22:48:54,353 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:48:54,353 get_name INFO redirecting -----------------------
+2016-09-14 22:48:54,358 index INFO Launching pgc
+2016-09-14 22:50:39,879 get_name INFO FORM INFO
+2016-09-14 22:50:39,879 get_name INFO form info is {'new_vid': u'', 'new_parc': u''} 
+2016-09-14 22:50:39,879 get_name INFO form info from the loop is new_vid 
+2016-09-14 22:50:39,879 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:50:39,879 get_name INFO redirecting -----------------------
+2016-09-14 22:50:39,881 index INFO Launching pgc
+2016-09-14 22:51:26,388 get_name INFO FORM INFO
+2016-09-14 22:51:26,389 get_name INFO form info is {'new_vid': u'', 'new_parc': u''} 
+2016-09-14 22:51:26,389 get_name INFO form info from the loop is new_vid 
+2016-09-14 22:51:26,389 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:51:26,389 get_name INFO redirecting -----------------------
+2016-09-14 22:51:26,391 index INFO Launching pgc
+2016-09-14 22:54:04,553 get_name INFO FORM INFO
+2016-09-14 22:54:04,553 get_name INFO form info is {'new_vid': u'', 'new_parc': u''} 
+2016-09-14 22:54:04,553 get_name INFO form info from the loop is new_vid 
+2016-09-14 22:54:04,554 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:54:04,554 get_name INFO redirecting -----------------------
+2016-09-14 22:54:04,556 index INFO Launching pgc
+2016-09-14 22:54:32,858 get_name INFO FORM INFO
+2016-09-14 22:54:32,858 get_name INFO form info is  
+2016-09-14 22:54:32,859 get_name INFO form info from the loop is new_vid 
+2016-09-14 22:54:32,859 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:54:32,859 get_name INFO redirecting -----------------------
+2016-09-14 22:54:32,861 index INFO Launching pgc
+2016-09-14 22:55:33,016 get_name INFO FORM INFO
+2016-09-14 22:55:33,016 get_name INFO form info is  
+2016-09-14 22:55:33,017 get_name INFO form info from the loop is new_vid 
+2016-09-14 22:55:33,017 get_name INFO form info from the loop is new_parc 
+2016-09-14 22:55:33,017 get_name INFO redirecting -----------------------
+2016-09-14 22:55:33,019 index INFO Launching pgc
+2016-09-14 23:29:27,831 get_name INFO FORM INFO
+2016-09-14 23:29:27,831 get_name INFO form info is  
+2016-09-14 23:29:27,831 get_name INFO form info from the loop is new_vid 
+2016-09-14 23:29:27,831 get_name INFO form info from the loop is new_parc 
+2016-09-14 23:29:27,831 get_name INFO redirecting -----------------------
+2016-09-14 23:29:27,833 index INFO Launching pgc
+2016-09-14 23:39:20,737 get_name INFO FORM INFO
+2016-09-14 23:39:20,737 get_name INFO form info is f 
+2016-09-14 23:39:20,737 get_name INFO form info from the loop is new_vid 
+2016-09-14 23:39:20,737 get_name INFO form info from the loop is new_parc 
+2016-09-14 23:39:20,738 get_name INFO redirecting -----------------------
+2016-09-14 23:39:20,746 index INFO Launching pgc
+2016-09-14 23:42:47,867 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>Your Name is Required</li></ul></li></ul>
+2016-09-14 23:43:22,628 get_name INFO FORM INFO
+2016-09-14 23:43:22,628 get_name INFO form info data is None 
+2016-09-14 23:43:22,628 get_name INFO form info vid is ALLAH 
+2016-09-14 23:43:22,629 get_name INFO form info from the loop is new_vid 
+2016-09-14 23:43:22,629 get_name INFO form info from the loop is new_date 
+2016-09-14 23:43:22,629 get_name INFO form info from the loop is new_parc 
+2016-09-14 23:43:22,629 get_name INFO redirecting -----------------------
+2016-09-14 23:43:22,631 index INFO Launching pgc
+2016-09-14 23:43:56,638 get_name INFO FORM INFO
+2016-09-14 23:43:56,638 get_name INFO form info data is None 
+2016-09-14 23:43:56,638 get_name INFO form info vid is ALLAH 
+2016-09-14 23:43:56,638 get_name INFO form info from the loop is new_vid 
+2016-09-14 23:43:56,638 get_name INFO form info from the loop is new_date 
+2016-09-14 23:43:56,638 get_name INFO form info from the loop is new_parc 
+2016-09-14 23:43:56,639 get_name INFO redirecting -----------------------
+2016-09-14 23:43:56,643 index INFO Launching pgc
+2016-09-14 23:48:13,263 get_name INFO FORM INFO
+2016-09-14 23:48:13,264 get_name INFO form info data is None 
+2016-09-14 23:48:13,264 get_name INFO form info vid is jj 
+2016-09-14 23:48:13,264 get_name INFO form info vid is None 
+2016-09-14 23:48:13,264 get_name INFO redirecting -----------------------
+2016-09-14 23:48:13,268 index INFO Launching pgc
+2016-09-14 23:48:50,749 get_name INFO FORM INFO
+2016-09-14 23:48:50,749 get_name INFO form info data is None 
+2016-09-14 23:48:50,749 get_name INFO form info vid is  
+2016-09-14 23:48:50,750 get_name INFO form info vid is None 
+2016-09-14 23:48:50,750 get_name INFO redirecting -----------------------
+2016-09-14 23:48:50,752 index INFO Launching pgc
+2016-09-14 23:53:20,061 get_name INFO FORM INFO
+2016-09-14 23:53:20,061 get_name INFO form info data is None 
+2016-09-14 23:53:20,061 get_name INFO form info vid is dh 
+2016-09-14 23:53:20,061 get_name INFO form info vid is None 
+2016-09-14 23:53:20,061 get_name INFO form info vid is  
+2016-09-14 23:53:20,061 get_name INFO redirecting -----------------------
+2016-09-14 23:53:20,064 index INFO Launching pgc
+2016-09-14 23:54:24,535 get_name INFO FORM INFO
+2016-09-14 23:54:24,535 get_name INFO form info data is None 
+2016-09-14 23:54:24,535 get_name INFO form info vid is bbbbbb 
+2016-09-14 23:54:24,536 get_name INFO form info vid is None 
+2016-09-14 23:54:24,536 get_name INFO form info parc  
+2016-09-14 23:54:24,536 get_name INFO redirecting -----------------------
+2016-09-14 23:54:24,538 index INFO Launching pgc
+2016-09-14 23:55:06,761 get_name INFO FORM INFO
+2016-09-14 23:55:06,762 get_name INFO form info date is None 
+2016-09-14 23:55:06,762 get_name INFO form info vid is bbbbbb 
+2016-09-14 23:55:06,762 get_name INFO form info item is None 
+2016-09-14 23:55:06,762 get_name INFO form info parc  
+2016-09-14 23:55:06,762 get_name INFO redirecting -----------------------
+2016-09-14 23:55:06,765 index INFO Launching pgc
+2016-09-15 07:51:54,451 get_name INFO FORM INFO
+2016-09-15 07:51:54,451 get_name INFO form info date is None 
+2016-09-15 07:51:54,451 get_name INFO form info vid is 625 
+2016-09-15 07:51:54,451 get_name INFO form info item is None 
+2016-09-15 07:51:54,451 get_name INFO form info parc  
+2016-09-15 07:51:54,451 get_name INFO redirecting -----------------------
+2016-09-15 07:51:54,458 index INFO Launching pgc
+2016-09-15 07:53:10,987 get_name INFO FORM INFO
+2016-09-15 07:53:10,987 get_name INFO form info date is None 
+2016-09-15 07:53:10,987 get_name INFO form info vid is 625 
+2016-09-15 07:53:10,988 get_name INFO form info item is None 
+2016-09-15 07:53:10,988 get_name INFO form info parc  
+2016-09-15 07:53:10,988 get_name INFO redirecting -----------------------
+2016-09-15 07:53:10,990 index INFO Launching pgc
+2016-09-15 07:54:31,923 get_name INFO FORM INFO
+2016-09-15 07:54:31,923 get_name INFO form info date is None 
+2016-09-15 07:54:31,923 get_name INFO form info vid is aeh 
+2016-09-15 07:54:31,924 get_name INFO form info item is None 
+2016-09-15 07:54:31,924 get_name INFO form info parc  
+2016-09-15 07:54:31,924 get_name INFO redirecting -----------------------
+2016-09-15 07:54:31,926 index INFO Launching pgc
+2016-09-15 08:05:10,507 index INFO Launching pgc
+2016-09-15 08:05:16,835 index INFO Launching pgc
+2016-09-15 08:05:22,546 get_response WARNING Not Found: /asset
+2016-09-15 08:05:27,173 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:05:31,982 purchase INFO First purchase method PL01060288
+2016-09-15 08:05:31,982 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 08:05:36,284 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:36,284 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:36,284 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:36,284 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:36,285 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:36,285 purchase INFO master dic done
+2016-09-15 08:05:36,285 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 08:05:46,695 copy_of_upload INFO Upload start
+2016-09-15 08:05:46,697 copy_of_upload INFO folder type [<InMemoryUploadedFile: w17.jpg (image/jpeg)>]
+2016-09-15 08:05:46,697 copy_of_upload INFO folder type asset/front
+2016-09-15 08:05:46,697 copy_of_upload INFO folder type asset/front
+2016-09-15 08:05:46,697 copy_of_upload INFO New folder count 0 in /home/rah/PycharmProjects/pgic/static/asset/front/PL01060288
+2016-09-15 08:05:46,698 copy_of_upload INFO v PL01060288 fol asset/front
+2016-09-15 08:05:46,700 copy_of_upload INFO New folder count 0 in /home/rah/PycharmProjects/pgic/static/asset/front/PL01060288
+2016-09-15 08:05:46,707 purchase INFO First purchase method PL01060288
+2016-09-15 08:05:46,707 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 08:05:47,178 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:47,178 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:47,178 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:47,179 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:47,179 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:47,179 purchase INFO master dic done
+2016-09-15 08:05:47,179 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 08:05:53,990 copy_of_upload INFO Upload start
+2016-09-15 08:05:53,994 copy_of_upload INFO folder type [<InMemoryUploadedFile: w15.jpg (image/jpeg)>]
+2016-09-15 08:05:53,994 copy_of_upload INFO folder type asset/bills
+2016-09-15 08:05:53,995 copy_of_upload INFO folder type asset/bills
+2016-09-15 08:05:53,995 copy_of_upload INFO New folder count 0 in /home/rah/PycharmProjects/pgic/static/asset/bills/PL01060288
+2016-09-15 08:05:53,996 copy_of_upload INFO v PL01060288 fol asset/bills
+2016-09-15 08:05:53,997 copy_of_upload INFO New folder count 0 in /home/rah/PycharmProjects/pgic/static/asset/bills/PL01060288
+2016-09-15 08:05:54,000 purchase INFO First purchase method PL01060288
+2016-09-15 08:05:54,000 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 08:05:54,474 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:54,474 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:54,474 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:54,474 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:54,474 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:05:54,474 purchase INFO master dic done
+2016-09-15 08:05:54,474 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [u'PL01060288_0'], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 08:06:36,019 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:07:31,877 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:09:57,614 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:10:26,987 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:27:28,368 index INFO Launching pgc
+2016-09-15 08:27:32,507 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 08:27:41,446 purchase INFO First purchase method PL01060288
+2016-09-15 08:27:41,446 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 08:27:41,714 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:27:41,714 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:27:41,714 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:27:41,714 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:27:41,714 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 08:27:41,714 purchase INFO master dic done
+2016-09-15 08:27:41,714 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [u'PL01060288_0'], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 08:41:29,580 get_name INFO FORM INFO
+2016-09-15 08:41:29,580 get_name INFO form info date is None 
+2016-09-15 08:41:29,580 get_name INFO form info vid is 15354651 
+2016-09-15 08:41:29,580 get_name INFO form info item is None 
+2016-09-15 08:41:29,580 get_name INFO form info parc  
+2016-09-15 08:41:29,580 get_name INFO redirecting -----------------------
+2016-09-15 08:41:29,584 index INFO Launching pgc
+2016-09-15 08:41:47,934 get_name INFO FORM INFO
+2016-09-15 08:41:47,934 get_name INFO form info date is None 
+2016-09-15 08:41:47,934 get_name INFO form info vid is 15354651 
+2016-09-15 08:41:47,934 get_name INFO form info item is None 
+2016-09-15 08:41:47,935 get_name INFO form info parc  
+2016-09-15 08:41:47,935 get_name INFO redirecting -----------------------
+2016-09-15 08:41:47,938 index INFO Launching pgc
+2016-09-15 08:42:07,759 get_name INFO FORM INFO
+2016-09-15 08:42:07,759 get_name INFO form info date is None 
+2016-09-15 08:42:07,759 get_name INFO form info vid is ridaridairida 
+2016-09-15 08:42:07,759 get_name INFO form info item is None 
+2016-09-15 08:42:07,759 get_name INFO form info parc  
+2016-09-15 08:42:07,759 get_name INFO redirecting -----------------------
+2016-09-15 08:42:07,761 index INFO Launching pgc
+2016-09-15 08:42:47,931 get_name INFO FORM INFO
+2016-09-15 08:42:47,931 get_name INFO form info date is None 
+2016-09-15 08:42:47,931 get_name INFO form info vid is 1321456486 
+2016-09-15 08:42:47,931 get_name INFO form info item is None 
+2016-09-15 08:42:47,931 get_name INFO form info parc  
+2016-09-15 08:42:47,932 get_name INFO redirecting -----------------------
+2016-09-15 08:42:47,938 index INFO Launching pgc
+2016-09-15 08:43:22,558 get_name INFO FORM INFO
+2016-09-15 08:43:22,558 get_name INFO form info date is None 
+2016-09-15 08:43:22,559 get_name INFO form info vid is 1321456486 
+2016-09-15 08:43:22,559 get_name INFO form info item is None 
+2016-09-15 08:43:22,559 get_name INFO form info parc  
+2016-09-15 08:43:22,559 get_name INFO redirecting -----------------------
+2016-09-15 08:43:22,563 index INFO Launching pgc
+2016-09-15 09:02:16,849 index INFO Launching pgc
+2016-09-15 09:02:22,101 index INFO Launching pgc
+2016-09-15 09:02:27,164 index INFO Launching pgc
+2016-09-15 09:02:30,604 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 09:02:34,599 purchase INFO First purchase method PL01060288
+2016-09-15 09:02:34,600 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 09:02:37,198 purchase INFO First purchase method PL01060288
+2016-09-15 09:02:37,198 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 09:02:40,302 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:40,303 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:40,303 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:40,303 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:40,303 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:40,303 purchase INFO master dic done
+2016-09-15 09:02:40,303 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [u'PL01060288_0'], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 09:02:45,696 purchase INFO First purchase method PL01060311
+2016-09-15 09:02:45,696 purchase INFO Getting voucher id from post request PL01060311
+2016-09-15 09:02:47,655 purchase INFO acct_id 0131--------------------------------------------,
+2016-09-15 09:02:47,656 purchase INFO master dic done
+2016-09-15 09:02:47,656 purchase INFO {'acct_id': u'0131', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Camera', 'imagefront_listt': [], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL01060311', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 09:02:52,956 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:52,956 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:52,956 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:52,956 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:52,956 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 09:02:52,956 purchase INFO master dic done
+2016-09-15 09:02:52,956 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [u'PL01060288_0'], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 09:38:41,205 get_response WARNING Not Found: /test
+2016-09-15 09:51:11,733 index INFO Launching pgc
+2016-09-15 09:57:21,205 get_response WARNING Not Found: /your-name/
+2016-09-15 09:57:55,411 get_response WARNING Not Found: /your-name/
+2016-09-15 09:58:16,196 get_response WARNING Not Found: /your-name/
+2016-09-15 09:58:34,794 get_response WARNING Not Found: /your-name/
+2016-09-15 09:59:52,040 get_response WARNING Not Found: /your-name/
+2016-09-15 10:00:39,779 get_response WARNING Not Found: /your-name/
+2016-09-15 10:01:57,663 index INFO Launching pgc
+2016-09-15 10:02:10,085 get_response WARNING Not Found: /your-name/
+2016-09-15 10:03:27,841 get_response WARNING Not Found: /your-name/
+2016-09-15 10:05:53,025 get_response WARNING Not Found: /your-name/
+2016-09-15 10:05:57,014 get_response WARNING Not Found: /your-name/
+2016-09-15 10:06:07,389 index INFO Launching pgc
+2016-09-15 10:07:40,714 index INFO Launching pgc
+2016-09-15 10:07:58,922 index INFO Launching pgc
+2016-09-15 10:14:10,866 get_form INFO get form
+2016-09-15 10:14:12,725 get_response WARNING Not Found: /get_form
+2016-09-15 10:14:45,789 get_form INFO get form
+2016-09-15 10:14:47,341 get_response WARNING Not Found: /form
+2016-09-15 10:15:53,392 get_form INFO get form
+2016-09-15 10:15:59,893 get_form INFO get form
+2016-09-15 10:16:00,997 get_form INFO get form
+2016-09-15 10:16:02,268 get_form INFO get form
+2016-09-15 10:16:02,269 handle_uncaught_exception ERROR Internal Server Error: /forms
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 345, in get_form
+    logger.info('NAme is %s', form.cleaned_data['your_name'])
+KeyError: 'your_name'
+2016-09-15 10:18:51,270 get_form INFO get form
+2016-09-15 10:18:51,271 handle_uncaught_exception ERROR Internal Server Error: /forms
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 345, in get_form
+    logger.info('NAme is %s', form.cleaned_data['your_name'])
+KeyError: 'your_name'
+2016-09-15 10:18:55,611 get_form INFO get form
+2016-09-15 10:20:35,440 get_form INFO get form
+2016-09-15 10:20:50,925 get_response WARNING Not Found: /forms/
+2016-09-15 10:21:16,004 get_form INFO get form
+2016-09-15 10:22:43,633 get_form INFO get form
+2016-09-15 10:22:47,860 get_name INFO FORM INFO
+2016-09-15 10:22:47,860 get_name INFO form info date is None 
+2016-09-15 10:22:47,860 get_name INFO form info vid is  
+2016-09-15 10:22:47,860 get_name INFO form info item is None 
+2016-09-15 10:22:47,860 get_name INFO form info parc  
+2016-09-15 10:22:47,860 get_name INFO redirecting -----------------------
+2016-09-15 10:22:47,864 index INFO Launching pgc
+2016-09-15 10:23:16,913 get_form INFO get form
+2016-09-15 10:23:20,099 get_name INFO FORM INFO
+2016-09-15 10:23:20,100 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 319, in get_name
+    logger.info('form info date is %s ', data['your_name'])
+KeyError: 'your_name'
+2016-09-15 10:23:38,393 get_form INFO get form
+2016-09-15 10:23:39,878 get_name INFO FORM INFO
+2016-09-15 10:23:39,878 get_name INFO form info date is {'item_combo': None, 'new_vid': u'', 'new_date': None, 'new_parc': u''} 
+2016-09-15 10:23:39,878 get_name INFO redirecting -----------------------
+2016-09-15 10:23:39,882 index INFO Launching pgc
+2016-09-15 10:24:14,205 get_form INFO get form
+2016-09-15 10:24:32,174 get_name INFO FORM INFO
+2016-09-15 10:24:32,174 get_name INFO form info date is {'item_combo': None, 'new_vid': u'', 'new_date': None, 'new_parc': u''} 
+2016-09-15 10:24:32,174 get_name INFO redirecting -----------------------
+2016-09-15 10:24:32,181 index INFO Launching pgc
+2016-09-15 10:25:25,005 get_form INFO get form
+2016-09-15 10:25:26,429 get_form INFO get form
+2016-09-15 10:25:30,968 get_name INFO FORM INFO
+2016-09-15 10:25:30,968 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'ehtyh', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u'vfv'} 
+2016-09-15 10:25:30,968 get_name INFO redirecting -----------------------
+2016-09-15 10:25:30,971 index INFO Launching pgc
+2016-09-15 10:25:47,797 get_form INFO get form
+2016-09-15 10:25:49,072 get_name INFO FORM INFO
+2016-09-15 10:25:49,072 get_name INFO form info date is {'item_combo': None, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 10:25:49,072 get_name INFO redirecting -----------------------
+2016-09-15 10:25:49,075 index INFO Launching pgc
+2016-09-15 10:28:07,174 get_form INFO get form
+2016-09-15 10:28:07,175 handle_uncaught_exception ERROR Internal Server Error: /forms
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 353, in get_form
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: 'crispy_for_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+crispy_forms_field
+crispy_forms_filters
+crispy_forms_tags
+crispy_forms_utils
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-09-15 10:28:22,040 get_form INFO get form
+2016-09-15 10:28:22,041 handle_uncaught_exception ERROR Internal Server Error: /forms
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 353, in get_form
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: 'crispy_form_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+crispy_forms_field
+crispy_forms_filters
+crispy_forms_tags
+crispy_forms_utils
+future
+i18n
+l10n
+log
+static
+staticfiles
+tz
+2016-09-15 10:28:36,471 get_form INFO get form
+2016-09-15 10:28:36,473 handle_uncaught_exception ERROR Internal Server Error: /forms
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 353, in get_form
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 97, in render
+    reraise(exc, self.backend)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 118, in reraise
+    six.reraise(exc.__class__, new, sys.exc_info()[2])
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 1043, in render
+    output = self.filter_expression.resolve(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 736, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/usr/local/lib/python2.7/dist-packages/crispy_forms/templatetags/crispy_forms_filters.py", line 58, in as_crispy_form
+    template = uni_form_template(template_pack)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/lru_cache.py", line 124, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/local/lib/python2.7/dist-packages/crispy_forms/templatetags/crispy_forms_filters.py", line 23, in uni_form_template
+    return get_template('%s/uni_form.html' % template_pack)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 43, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: boostrap3/uni_form.html
+2016-09-15 10:29:04,057 get_form INFO get form
+2016-09-15 10:29:05,510 get_form INFO get form
+2016-09-15 10:29:11,219 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>new_date<ul class="errorlist"><li>Enter a valid date.</li></ul></li></ul>
+2016-09-15 10:29:26,310 get_form INFO get form
+2016-09-15 10:29:31,491 get_name INFO FORM INFO
+2016-09-15 10:29:31,491 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'eryhyuy', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u'eg'} 
+2016-09-15 10:29:31,491 get_name INFO redirecting -----------------------
+2016-09-15 10:29:31,494 index INFO Launching pgc
+2016-09-15 10:31:27,481 get_form INFO get form
+2016-09-15 10:32:03,296 get_form INFO get form
+2016-09-15 10:32:06,382 get_form INFO get form
+2016-09-15 10:32:18,364 get_name INFO FORM INFO
+2016-09-15 10:32:18,364 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'tyjyurjyuj', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u'etyhetyh'} 
+2016-09-15 10:32:18,364 get_name INFO redirecting -----------------------
+2016-09-15 10:32:18,367 index INFO Launching pgc
+2016-09-15 10:32:35,655 get_form INFO get form
+2016-09-15 10:33:37,602 get_form INFO get form
+2016-09-15 10:34:44,717 get_form INFO get form
+2016-09-15 10:34:47,703 get_form INFO get form
+2016-09-15 10:35:26,012 get_form INFO get form
+2016-09-15 10:36:43,480 get_form INFO get form
+2016-09-15 10:36:54,688 get_form INFO get form
+2016-09-15 10:37:06,134 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:37:23,464 get_response WARNING Not Found: /contact/
+2016-09-15 10:37:49,921 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:38:09,384 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:38:23,697 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:38:32,689 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:38:40,077 get_form INFO get form
+2016-09-15 10:38:54,775 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:39:13,775 get_form INFO get form
+2016-09-15 10:39:46,007 get_form INFO get form
+2016-09-15 10:40:08,440 get_name INFO FORM INFO
+2016-09-15 10:40:08,441 get_name INFO form info date is {'sender': u'rijisni@sdmvk.com', 'new_date': None, 'cc_myself': True, 'new_vid': u'', 'new_parc': u'', 'item_combo': None, 'message': u'svfbvvhi jrvhuerfvidnc jdfvnfubdvcijnxzk jdbfv9epwjfoidn', 'subject': u'fwnejf'} 
+2016-09-15 10:40:09,042 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 329, in get_name
+    send_mail(subject, message, sender, recipients)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 58, in open
+    self.connection = connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+2016-09-15 10:40:49,271 get_form INFO get form
+2016-09-15 10:40:58,871 get_form INFO get form
+2016-09-15 10:40:58,872 handle_uncaught_exception ERROR Internal Server Error: /forms/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 355, in get_form
+    logger.info('NAme is %s', form.cleaned_data['your_name'])
+KeyError: 'your_name'
+2016-09-15 10:41:36,879 get_form INFO get form
+2016-09-15 10:41:36,880 handle_uncaught_exception ERROR Internal Server Error: /forms/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 355, in get_form
+    logger.info('NAme is %s', form.cleaned_data['your_name'])
+KeyError: 'your_name'
+2016-09-15 10:42:36,824 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:42:49,001 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:42:56,575 get_response WARNING Not Found: /contact/
+2016-09-15 10:42:59,649 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:43:24,973 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:43:32,800 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:44:17,555 get_name ERROR Form is invalid. Errors are <ul class="errorlist"><li>message<ul class="errorlist"><li>This field is required.</li></ul></li><li>sender<ul class="errorlist"><li>This field is required.</li></ul></li><li>subject<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2016-09-15 10:44:23,580 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:44:30,504 get_name INFO FORM INFO
+2016-09-15 10:44:30,504 get_name INFO form info date is {'sender': u'rijisni@sdmvk.com', 'new_date': None, 'cc_myself': False, 'new_vid': u'', 'new_parc': u'', 'item_combo': None, 'message': u'erfwerfwe', 'subject': u'Wefw'} 
+2016-09-15 10:44:31,064 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 329, in get_name
+    send_mail(subject, message, sender, recipients)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 58, in open
+    self.connection = connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+2016-09-15 10:45:29,954 get_name INFO FORM INFO
+2016-09-15 10:45:29,954 get_name INFO form info date is {'sender': u'rijisni@sdmvk.com', 'new_date': None, 'cc_myself': False, 'new_vid': u'', 'new_parc': u'', 'item_combo': None, 'message': u'erfwerfwe', 'subject': u'Wefw'} 
+2016-09-15 10:45:29,966 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 329, in get_name
+    send_mail(subject, message, sender, recipients)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 58, in open
+    self.connection = connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+2016-09-15 10:45:37,422 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:46:23,452 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:46:31,279 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:47:03,250 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:47:09,343 get_name INFO FORM INFO
+2016-09-15 10:47:09,343 get_name INFO form info date is {'sender': u'rijisni@sdmvk.com', 'new_date': None, 'cc_myself': False, 'new_vid': u'', 'new_parc': u'', 'item_combo': None, 'message': u'asdc', 'subject': u'ad'} 
+2016-09-15 10:47:09,354 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 329, in get_name
+    send_mail(subject, message, sender, recipients)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/mail/backends/smtp.py", line 58, in open
+    self.connection = connection_class(self.host, self.port, **connection_params)
+  File "/usr/lib/python2.7/smtplib.py", line 256, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/lib/python2.7/smtplib.py", line 316, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/lib/python2.7/smtplib.py", line 291, in _get_socket
+    return socket.create_connection((host, port), timeout)
+  File "/usr/lib/python2.7/socket.py", line 571, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+2016-09-15 10:49:02,319 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:49:05,184 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:49:38,433 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:49:41,710 get_name INFO FORM INFO
+2016-09-15 10:49:41,710 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 10:49:41,710 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 320, in get_name
+    subject = form.cleaned_data['subject']
+KeyError: 'subject'
+2016-09-15 10:50:24,946 get_name INFO FORM INFO
+2016-09-15 10:50:24,947 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 10:50:24,947 get_name INFO redirecting -----------------------
+2016-09-15 10:50:24,950 index INFO Launching pgc
+2016-09-15 10:50:30,427 get_name ERROR Form has GET request. Errors are 
+2016-09-15 10:50:34,137 get_name INFO FORM INFO
+2016-09-15 10:50:34,137 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 10:50:34,137 get_name INFO redirecting -----------------------
+2016-09-15 10:50:34,139 index INFO Launching pgc
+2016-09-15 11:11:59,397 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:12:02,054 get_name INFO FORM INFO
+2016-09-15 11:12:02,054 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 11:12:02,054 get_name INFO redirecting -----------------------
+2016-09-15 11:12:02,057 index INFO Launching pgc
+2016-09-15 11:13:51,978 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:13:55,501 index INFO Launching pgc
+2016-09-15 11:14:02,172 invoice INFO Asset dictionary {'assets': [<VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, <VPlInvoice: VPlInvoice object>, '...(remaining elements truncated)...']}
+2016-09-15 11:14:05,729 purchase INFO First purchase method PL109
+2016-09-15 11:14:05,729 purchase INFO Getting voucher id from post request PL109
+2016-09-15 11:14:06,316 purchase INFO acct_id 0140--------------------------------------------,
+2016-09-15 11:14:06,316 purchase INFO master dic done
+2016-09-15 11:14:06,317 purchase INFO {'acct_id': u'0140', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'120ft tower', 'imagefront_listt': [], 'imagelib_count': 0, 'imagebill_list': [], 'voucher_id': u'PL109', 'voucher_date': datetime.date(2016, 8, 8), 'imagelib_list': [], 'particulars': u'&lt;br /&gt;&lt;b&gt;Notice&lt;/b&gt;:  Undefined variable: m_particulars in &lt;b&gt;S:AppsPHPxampphtdocsclickamsale_invoice.php&lt;/b&gt; on line &lt;b&gt;281&lt;/b&gt;&lt;br /&gt;'}
+2016-09-15 11:14:20,434 purchase INFO First purchase method PL01060288
+2016-09-15 11:14:20,434 purchase INFO Getting voucher id from post request PL01060288
+2016-09-15 11:14:21,554 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 11:14:21,554 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 11:14:21,554 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 11:14:21,554 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 11:14:21,554 purchase INFO acct_id 0132--------------------------------------------,
+2016-09-15 11:14:21,554 purchase INFO master dic done
+2016-09-15 11:14:21,554 purchase INFO {'acct_id': u'0132', 'invoice_data': [<VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>, <VPlInvoicedet: VPlInvoicedet object>], 'stock_name': u'Dell PowerEdge 2950 Xeon', 'imagefront_listt': [u'PL01060288_0'], 'imagelib_count': 0, 'imagebill_list': [u'PL01060288_0'], 'voucher_id': u'PL01060288', 'voucher_date': datetime.date(2016, 6, 18), 'imagelib_list': [], 'particulars': u''}
+2016-09-15 11:14:32,756 get_response WARNING Not Found: /purchase/new_invoice
+2016-09-15 11:15:30,434 handle_uncaught_exception ERROR Internal Server Error: /purchase/new_invoice
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: purchase() takes exactly 2 arguments (1 given)
+2016-09-15 11:15:37,132 handle_uncaught_exception ERROR Internal Server Error: /purchase/new_invoice
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: purchase() takes exactly 2 arguments (1 given)
+2016-09-15 11:16:34,233 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:17:49,164 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:18:01,289 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:19:30,677 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:20:02,210 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:26:00,894 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:27:46,579 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:27:58,089 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:31:07,834 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:31:11,843 get_name INFO FORM INFO
+2016-09-15 11:31:11,843 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 11:31:11,844 get_name INFO item combo is Item object 
+2016-09-15 11:31:11,844 get_name INFO redirecting -----------------------
+2016-09-15 11:31:11,846 index INFO Launching pgc
+2016-09-15 11:33:16,937 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:33:17,945 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:34:11,972 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:34:19,162 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:35:53,929 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:38:28,675 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:41:12,179 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:41:40,059 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:41:52,313 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:42:34,490 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:42:41,217 get_name INFO FORM INFO
+2016-09-15 11:42:41,217 get_name INFO form info date is {'item_combo': None, 'new_vid': u'515656466', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u''} 
+2016-09-15 11:42:41,218 get_name INFO item combo is None 
+2016-09-15 11:42:41,218 get_name INFO redirecting -----------------------
+2016-09-15 11:42:41,221 index INFO Launching pgc
+2016-09-15 11:43:13,841 get_name ERROR Form has GET request. Errors are 
+2016-09-15 11:43:18,473 get_name INFO FORM INFO
+2016-09-15 11:43:18,473 get_name INFO form info date is {'item_combo': None, 'new_vid': u'515656466', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u'365zjdghfvasduoahosg'} 
+2016-09-15 11:43:18,473 get_name INFO item combo is None 
+2016-09-15 11:43:18,473 get_name INFO redirecting -----------------------
+2016-09-15 11:43:18,476 index INFO Launching pgc
+2016-09-15 11:49:01,906 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:19:26,639 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:19:26,645 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 336, in get_name
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_name' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-09-15 12:24:23,419 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:24:23,423 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 336, in get_name
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'your-name' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-09-15 12:24:47,667 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:24:47,672 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 336, in get_name
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_name' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-09-15 12:25:04,179 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:25:04,183 handle_uncaught_exception ERROR Internal Server Error: /your-name/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rah/PycharmProjects/pgic/asset/views.py", line 336, in get_name
+    return render(request, 'form.html', {'form': form})
+  File "/usr/local/lib/python2.7/dist-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/base.py", line 959, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_name' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-09-15 12:27:01,217 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:27:51,330 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:28:07,128 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:28:14,901 get_name INFO FORM INFO
+2016-09-15 12:28:14,901 get_name INFO form info date is {'item_combo': <Item: Item object>, 'new_vid': u'dxtuogio;hio;d tjtkful', 'new_date': datetime.date(2016, 9, 15), 'new_parc': u'srtidy'} 
+2016-09-15 12:28:14,901 get_name INFO item combo is Item object 
+2016-09-15 12:28:14,902 get_name INFO redirecting -----------------------
+2016-09-15 12:28:14,904 index INFO Launching pgc
+2016-09-15 12:28:24,603 get_name ERROR Form has GET request. Errors are 
+2016-09-15 12:31:57,686 post_new ERROR Form has GET request. Errors are 
+2016-09-15 12:41:25,514 get_response WARNING Not Found: /post/edit

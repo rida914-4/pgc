@@ -1,0 +1,142 @@
+{% load staticfiles %}
+
+                                        <div class="form-group">
+                                            <div class="fieldWrapper">
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Date </label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <fieldset>
+                                                    <div class="control-group">
+                                                        <div class="controls">
+                                                            <div class=" xdisplay_inputx form-group has-feedback">
+                                                                <!--<input type="text"-->
+                                                                       <!--class="form-control has-feedback-left"-->
+                                                                       <!--id="single_cal1" placeholder="Select Date" value=""-->
+                                                                       <!--aria-describedby="inputSuccess2Status" required>-->
+                                                                {{ form.voucher_date }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                                </div>
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Item</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <!--<select class="select2_single form-control" tabindex="-1" id="new_item">-->
+                                                        {{ form.acct }}
+                                                        <!--<option value="">Select One</option>-->
+                                                        <!--{% for item in items %}-->
+                                                        <!--<option value="{{ item }}">{{ item }}</option>-->
+                                                        <!--{% endfor %}-->
+                                                    <!--</select>-->
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Voucher ID </label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <!--<input type="text" class="'id': 'single_cal1', " name="new_vid"  id="id_new_vid"-->
+                                                       <!--placeholder="{{ voucher_id }}">-->
+                                                {{ form.voucher_id }}
+                                            </div>
+
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Positions</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <!--<select class="select2_single form-control" tabindex="-1">-->
+                                                        <!--<option value="">Select One</option>-->
+                                                        <!--{% for pos in positions %}-->
+                                                        <!--<option value="{{ pos }}">{{ pos }}</option>-->
+                                                        <!--{% endfor %}-->
+                                                    <!--</select>-->
+                                                {{ form.pos_code }}
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Particulars</label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <!--<input type="text" class="form-control"-->
+                                                       <!--placeholder="Add Particulars here" id="id_new_parc" >-->
+                                                {{ form.particulars }}
+                                            </div>
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Custodians</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <!--<select class="select2_single form-control" tabindex="-1">-->
+                                                        <!--<option value="">Select One</option>-->
+                                                        <!--{% for cus in custodian %}-->
+                                                        <!--<option value="{{ cus }}">{{ cus }}</option>-->
+                                                        <!--{% endfor %}-->
+                                                    <!--</select>-->
+                                                    {{ form.cust }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p></p>
+                                        </div>
+
+                                        <!--#***************************************************-->
+                                        <!--Table for bulk-->
+                                        <!--***************************************************-->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                            <div class="x_content">
+                                                {{ formset.management_form }}
+                                                {{ formset.non_form_errors.as_ul }}
+                                                <table class="table table-striped responsive-utilities jambo_table bulk_action form"
+                                                       id="formset" style="background-color:#d0ffff;">
+                                                    <thead style="background-color:#9df0e0;;color: #73879C">
+                                                    {% for form in formset.forms %}
+                                                        {% if forloop.first %}
+                                                        <thead>
+                                                        <tr class="headings">
+                                                            {% for field in form.visible_fields %}
+                                                            <th>{{ field.label|capfirst }}</th>
+                                                            {% endfor %}
+                                                        </tr>
+                                                        </thead>
+                                                        {% endif %}
+
+                                                    <tbody>
+                                                    <tr class="no_error tablerow" >
+                                                        {% for field in form.visible_fields %}
+                                                        <td class="a-center ">
+                                                            {# Include the hidden fields in the form #}
+                                                            {% if forloop.first %}
+                                                            {% for hidden in form.hidden_fields %}
+                                                            {{ hidden }}
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                            {{ field.errors.as_ul }}
+                                                            {{ field }}
+                                                        </td>
+
+                                                        {% endfor %}
+                                                    </tr>
+
+                                                    {% endfor %}
+                                                    {{ formtotal }}
+                                                    </tbody>
+
+                                                </table>
+                                                <div style="width:200px;height:100px" align="right"></div>
+                                                    <input type="button" value="Add More" id="add_more" class="btn btn-default btn-primary pull-left">
+
+
+                                                <br><br><br>
+                                            </div>
+                                        </div>
+

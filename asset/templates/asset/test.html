@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+<html lang="en">
+
+{% include 'head.html' %}
+<body>
+<form method="post" action="/new/" >
+
+  {{ formset.management_form }}
+                                                {{ formset.non_form_errors.as_ul }}
+                                                <table class="table table-striped responsive-utilities jambo_table bulk_action form no_error"
+                                                       id="formset" >
+                                                    <thead style="background-color:#9df0e0;;color: #73879C">
+                                                    {% for form in formset.forms %}
+                                                        {% if forloop.first %}
+                                                        <thead>
+                                                        <tr class="headings">
+                                                            {% for field in form.visible_fields %}
+                                                            <th>{{ field.label|capfirst }}</th>
+                                                            {% endfor %}
+                                                        </tr>
+                                                        </thead>
+                                                        {% endif %}
+
+                                                    <tbody>
+
+                                                    <tr class="no_error tablerow" id="tablerow">
+                                                        {% for field in form.visible_fields %}
+                                                        <td class="a-center ">
+                                                            {# Include the hidden fields in the form #}
+                                                            {% if forloop.first %}
+                                                            {% for hidden in form.hidden_fields %}
+                                                            {{ hidden }}
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                            {{ field.errors.as_ul }}
+                                                            {{ field }}
+                                                        </td>
+                                                        {% endfor %}
+                                                    </tr>
+
+                                                  {% endfor %}
+
+                                                    </tbody>
+                                                </table>
+
+                                                <input type="button" value="Add More" id="add_more">
+                                                <script>
+                                                    $('#add_more').click(function() {
+                                                        cloneMore('tr.tablerow:last', 'service');
+                                                    });
+                                                </script>
+                                                </form>
+
+
+</body>
+<script>
+function cloneMore(selector, type) {
+    var newElement = $(selector).clone(true);
+    var total = $('#id_' + type + '-TOTAL_FORMS').val();
+    newElement.find(':input').each(function() {
+        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+        var id = 'id_' + name;
+        $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    });
+    newElement.find('label').each(function() {
+        var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('for', newFor);
+    });
+    total++;
+    $('#id_' + type + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+}
+</script>
+
+
+{% include 'footer.html' %}
+</html>

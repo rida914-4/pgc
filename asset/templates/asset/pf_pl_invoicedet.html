@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    {% include 'navbar.html' %}
+
+    <div class="content-wrapper">
+        <div class="container body">
+            <div class="main_container">
+
+
+                <div class="right_col" role="main">
+                    <div class="row">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3 style="margin-left:20px"> Report</h3>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                            <div class="well">
+                                <form class="form-horizontal" action="pf_pl_invoicedet" method="POST" >
+                                    <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Voucher ID</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.vid }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">From Date</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.from_date }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">To Date</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.to_date }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Location</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.loc_combo }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Custodian</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.cus_combo }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Assets</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.item_combo }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <div class="control-group">
+                                      <div class="controls">
+                                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Category</label>
+                                        <div class="input-prepend input-group">
+                                          <!--<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>-->
+                                          <!--<input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="03/18/2013 - 03/23/2013" />-->
+                                        <div class="fieldWrapper">
+                                            {{ form.cat_combo }}
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                    <input type="submit" value="Submit" id="submit_report">
+                                </form>
+
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    $('#submit_report').click(function() {
+    $.ajax({
+        url: your_url,
+        method: 'POST', // or another (GET), whatever you need
+        data: {
+            name: value, // data you need to pass to your function
+            click: True
+        }
+        success: function (data) {
+            // success callback
+            // you can process data returned by function from views.py
+        }
+    });
+});
+</script>
+{% include 'table.html' %}
+{% include 'form_advanced.html' %}
+{% include 'footer.html' %}
+
+</html>

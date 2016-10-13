@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+
+<form action="/interview/" method="post">{% csrf_token %}
+
+    <br><br>
+    <div id="addrows">
+        {{ formset.management_form }}
+        {{ formset.non_form_errors.as_ul }}
+        <table id="formset" class="form">
+            {% for form in formset.forms %}
+            {% if forloop.first %}
+            <thead>
+            <tr>
+                {% for field in form.visible_fields %}
+                <th>{{ field.label|capfirst }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            {% endif %}
+            <tr class="{% cycle row1,row2 %}">
+                {% for field in form.visible_fields %}
+                <td>
+                    {# Include the hidden fields in the form #}
+                    {% if forloop.first %}
+                    {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                    {% endfor %}
+                    {% endif %}
+                    {{ field.errors.as_ul }}
+                    {{ field }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <!--{% for form in formset %}-->
+        <!--{{ form.as_p }}-->
+        <!--{% endfor %}-->
+        <!--<input type="submit" value="Submit Questions" />-->
+
+    </div>
+    <input type="submit" value="Submit" >
+    <input type="button" value="Add More" id="add_more">
+    <input type="button" value="Del" id="delete_row">
+    <div id="empty_form" style="display:none">
+        <table id="no_error" class="form">
+            {% for form in formset_single.forms %}
+            <tr class="{% cycle row1,row2 %}">
+                {% for field in form.visible_fields %}
+                <td>
+                    {# Include the hidden fields in the form #}
+                    {% if forloop.first %}
+                    {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                    {% endfor %}
+                    {% endif %}
+                    {{ field.errors.as_ul }}
+                    {{ field }}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</form>
+<script>
+    $('#add_more').click(function() {
+        var form_idx = $('#id_form-TOTAL_FORMS').val();
+        $('#addrows').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
+        $('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+    });
+    $("#delete_row").click(function(){
+    i = 2
+                                                           if(i>1){
+                                                           $(".row"+(i-1)).html('');
+                                                           i--;
+                                                           }
+                                                              });
+
+
+</script>
+
+
+<!--<input type="button" value="Add More" id="add_more">-->
+<!--<script>-->
+<!--$('#add_more').click(function() {-->
+<!--cloneMore('div.table:last', 'service');-->
+<!--});-->
+<!--</script>-->
+
+{% include 'form_advanced.html' %}
+{% include 'table.html' %}
+{% include 'footer.html' %}
+</html>

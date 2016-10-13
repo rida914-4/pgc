@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    {% include 'navbar.html' %}
+
+    <div class="content-wrapper">
+        <div class="container body">
+            <div class="main_container">
+
+
+                <div class="right_col" role="main">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Assets Display
+                                    </h2>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <p class="text-muted font-13 m-b-30">
+                                    </p>
+                                    <table id="datatable-responsive"
+                                           class="table table-striped dt-responsive nowrap table-hover " cellspacing="0"
+                                           width="100%">
+                                        <thead style="background-color:#9df0e0;">
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>ID</th>
+                                            <th>Date</th>
+                                            <th>Asset</th>
+                                            <th>Office</th>
+                                            <th>Custodian</th>
+                                            <th>Bill</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for asset in assets %}
+                                        <tr>
+                                            {% static "" as baseUrl %}
+                                            <td>
+                                                <div class="zoomin">
+                                                    <img src="{% with 'asset/lib/'|add:asset.voucher_id|add:'/'|add:asset.voucher_id|add:'_0' as image_static %}{% static image_static %}{% endwith %}"
+                                                         height="50px" width="50px"
+                                                         onerror="this.src='{{ baseUrl }}images/noimage.png'">
+                                                </div>
+                                            </td>
+                                            <!--<td><form method="post" action="purchase" name="{{ asset.voucher_id }}"><a href="purchase" >{{ asset.voucher_date }}</a></form></td>-->
+
+                                            <td><a href="/purchase/{{ asset.voucher_id }}" target="_blank">
+                                                    <!--<input name="{{ asset.voucher_id }}" type="hidden">-->
+                                                    <button  style=" background: transparent; color:#73879C;border: none">
+                                                        {{ asset.voucher_id }}
+                                                    </button></a>
+                                            </td>
+                                            <td>
+                                                <!--<form method="post" action="purchase">-->
+                                                    <!--{% csrf_token %}-->
+                                                <a href="/purchase/{{ asset.voucher_id }}" target="_blank">
+                                                    <!--<input name="{{ asset.voucher_id }}" type="hidden">-->
+                                                    <button  style=" background: transparent; color:#73879C;border: none">
+                                                        {{ asset.voucher_date |date:"SHORT_DATE_FORMAT"}}
+                                                    </button></a>
+
+                                            </td>
+                                            <td>{{ asset.description }}</td>
+                                            <td>{{ asset.pos_name }}</td>
+                                            <td>{{ asset.cust_name }}</td>
+                                            <td>
+                                                <div class="zoomin">
+                                                    <img src="{% with 'asset/bills/'|add:asset.voucher_id|add:'/'|add:asset.voucher_id|add:'_0' as image_static %}{% static image_static %}{% endwith %}"
+                                                         height="50px" width="50px"
+                                                         onerror="this.src='{{ baseUrl }}images/noimage.png'">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--</div>-->
+                <!--&lt;!&ndash; /page content &ndash;&gt;-->
+                <!--</div>-->
+                {% include 'table.html' %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</body>
+{% include 'footer.html' %}

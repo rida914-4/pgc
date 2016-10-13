@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="link_to_content" href="http://192.168.100.3:7001/reports/rwservlet?server=RptSrvCS+report=s:\apps\oracle11g\art\reports\voucher.rdf+userid=click_art/pass@psm+desformat=pdf+DESTYPE=cache+p_voucher_id=CP090386">url</a>
+<!--<a id="link_to_content" href="http://www.google.com">url</a>-->
+<script>
+    $(document).ready(function () {
+
+    $("#link_to_content").click(function (e) {
+        e.preventDefault();
+        alert("you clicked!");
+    });
+    $('#link_to_content').trigger('click');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        {% include 'navbar.html' %}
+        <div class="content-wrapper">
+            <div class="container body">
+                <div class="main_container">
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Purchase Invoice Detail
+
+                                    </h2>
+                                    <div align="right">
+                                        <a id="save" type="submit" class="btn btn-round btn-primary"
+                                           style="background:#A43780;border-color:#A43780;" href="get_name">
+                                            <span class="fa fa-save" style="color:white;vertical-align:middle"></span>
+                                            Save
+                                        </a>
+                                        <button type="button" class="btn btn-round btn-primary"
+                                                style="background:#f0ad4e;border-color:#f0ad4e;text-align:center"
+                                                onclick="window.print();">
+                                            <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
+                                            Print
+                                        </button>
+                                        <button type="button" class="btn btn-round btn-success">
+                                            <span class="fa fa-remove" style="color:white;vertical-align:middle"></span>
+                                            Post
+                                        </button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <p class="text-muted font-13 m-b-30">
+                                    </p>
+                                    <form class="form-horizontal form-label-left input_mask" action="get_name" method="POST">
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Date </label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <fieldset>
+                                                    <div class="control-group">
+                                                        <div class="controls">
+                                                            <div class=" xdisplay_inputx form-group has-feedback">
+                                                                <input type="text"
+                                                                       class="form-control has-feedback-left"
+                                                                       id="single_cal1" placeholder="Select Date" value=""
+                                                                       aria-describedby="inputSuccess2Status" required>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Item</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <select class="select2_single form-control" tabindex="-1" id="new_item">
+                                                        <option value="">Select One</option>
+                                                        {% for item in items %}
+                                                        <option value="{{ item }}">{{ item }}</option>
+                                                        {% endfor %}
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Voucher ID </label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <input type="text" class="form-control" name="new_vid"  id="id_new_vid"
+                                                       placeholder="{{ voucher_id }}">
+                                            </div>
+
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Positions</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <select class="select2_single form-control" tabindex="-1">
+                                                        <option value="">Select One</option>
+                                                        {% for pos in positions %}
+                                                        <option value="{{ pos }}">{{ pos }}</option>
+                                                        {% endfor %}
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Particulars</label>
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <input type="text" class="form-control"
+                                                       placeholder="Add Particulars here" id="id_new_parc" >
+
+                                            </div>
+
+                                            <label class="control-label col-md-2 col-sm-3 col-xs-12">Custodians</label>
+                                            <div class="col-md-5 col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <select class="select2_single form-control" tabindex="-1">
+                                                        <option value="">Select One</option>
+                                                        {% for cus in custodian %}
+                                                        <option value="{{ cus }}">{{ cus }}</option>
+                                                        {% endfor %}
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <p></p>
+                                        </div>
+
+                                        <!--#***************************************************-->
+                                        <!--Table for bulk-->
+                                        <!--***************************************************-->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                            <div class="x_content">
+                                                <table class="table table-striped responsive-utilities jambo_table bulk_action"
+                                                       id="tab_logic">
+                                                    <thead style="background-color:#9df0e0;color: #73879C">
+                                                    <tr class="headings">
+                                                        <th>
+                                                            <input type="checkbox" id="check-all" class="flat">
+                                                        </th>
+                                                        <th class="column-title">Sr. No</th>
+                                                        <th class="column-title">Stock Code</th>
+                                                        <th class="column-title">Particulars</th>
+                                                        <th class="column-title">Qty</th>
+                                                        <th class="column-title">Rate</th>
+                                                        <th class="column-title">Amount</th>
+                                                        <th class="bulk-actions" colspan="7">
+                                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk
+                                                                Actions (
+                                                                <span class="action-cnt"> </span> ) <i
+                                                                        class="fa fa-chevron-down"></i></a>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                    <tr class="even pointer" id='addr0'>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="check0">
+                                                        </td>
+                                                        <td><input type="hidden" name="c0">1</td>
+                                                        <td class=" ">
+                                                            <select class="select2_single form-control" tabindex="-1"
+                                                                    name="scode0">
+                                                                <option value="">Select One</option>
+                                                                {% for item in items %}
+                                                                <option value="{{ item }}">{{ item }}</option>
+                                                                {% endfor %}
+                                                            </select></td>
+                                                        <td class=" "><input type="text" name='part0'
+                                                                             placeholder='Add particulars'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='qty0'
+                                                                             placeholder='Add Quantity '
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='rate0'
+                                                                             placeholder='Add rate'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='am0'
+                                                                             placeholder='Add amount'
+                                                                             class="form-control"/></td>
+                                                    </tr>
+                                                    <tr class="even pointer" id='addr1'>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="check2">
+                                                        </td>
+                                                        <td><input type="hidden" name="c2">2</td>
+                                                        <td class=" ">
+                                                            <select class="select2_single form-control" tabindex="-1"
+                                                                    name="scode2">
+                                                                <option value="">Select One</option>
+                                                                {% for item in items %}
+                                                                <option value="{{ item }}">{{ item }}</option>
+                                                                {% endfor %}
+                                                            </select></td>
+                                                        <td class=" "><input type="text" name='part2'
+                                                                             placeholder='Add particulars'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='qty2'
+                                                                             placeholder='Add Quantity '
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='rate2'
+                                                                             placeholder='Add rate'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='am2'
+                                                                             placeholder='Add amount'
+                                                                             class="form-control"/></td>
+                                                    </tr>
+                                                    <tr class="even pointer" id='addr2'>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="check2">
+                                                        </td>
+                                                        <td><input type="hidden" name="c2">3</td>
+                                                        <td class=" ">
+                                                            <select class="select2_single form-control" tabindex="-1"
+                                                                    name="scode2">
+                                                                <option value="">Select One</option>
+                                                                {% for item in items %}
+                                                                <option value="{{ item }}">{{ item }}</option>
+                                                                {% endfor %}
+                                                            </select></td>
+                                                        <td class=" "><input type="text" name='part2'
+                                                                             placeholder='Add particulars'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='qty2'
+                                                                             placeholder='Add Quantity '
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='rate2'
+                                                                             placeholder='Add rate'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='am2'
+                                                                             placeholder='Add amount'
+                                                                             class="form-control"/></td>
+                                                    </tr>
+                                                    <tr class="even pointer" id='addr3'>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="check3">
+                                                        </td>
+                                                        <td><input type="hidden" name="c3">4</td>
+                                                        <td class=" ">
+                                                            <select class="select2_single form-control" tabindex="-1"
+                                                                    name="scode3">
+                                                                <option value="">Select One</option>
+                                                                {% for item in items %}
+                                                                <option value="{{ item }}">{{ item }}</option>
+                                                                {% endfor %}
+                                                            </select></td>
+                                                        <td class=" "><input type="text" name='part3'
+                                                                             placeholder='Add particulars'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='qty3'
+                                                                             placeholder='Add Quantity '
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='rate3'
+                                                                             placeholder='Add rate'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='am3'
+                                                                             placeholder='Add amount'
+                                                                             class="form-control"/></td>
+                                                    </tr>
+                                                    <tr class="even pointer" id='addr4'>
+                                                        <td class="a-center ">
+                                                            <input type="checkbox" class="flat" name="check4">
+                                                        </td>
+                                                        <td><input type="hidden" name="c4">5</td>
+                                                        <td class=" ">
+                                                            <select class="select2_single form-control" tabindex="-1"
+                                                                    name="scode4">
+                                                                <option value="">Select One</option>
+                                                                {% for item in items %}
+                                                                <option value="{{ item }}">{{ item }}</option>
+                                                                {% endfor %}
+                                                            </select></td>
+                                                        <td class=" "><input type="text" name='part4'
+                                                                             placeholder='Add particulars'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='qty4'
+                                                                             placeholder='Add Quantity '
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='rate4'
+                                                                             placeholder='Add rate'
+                                                                             class="form-control"/></td>
+                                                        <td class=" "><input type="text" name='am4'
+                                                                             placeholder='Add amount'
+                                                                             class="form-control"/></td>
+                                                    </tr>
+                                                    <tr class="even pointer" id='addr5'></tr>
+                                                    </tbody>
+
+                                                </table>
+                                                <a id="add_row" class="btn btn-default btn-primary pull-left">Add
+                                                    Rows</a>
+                                                <a id='delete_row' class=" btn btn-default btn-danger">Delete Row</a>
+                                                <br><br><br>
+                                                <script>
+                                                          $(document).ready(function(){
+                                                        var i=5;
+                                                              var select_combo_end = '</select></td>'
+                                                        var select_combo_start = '<td><select class=\x22select2_single form-control\x22 tabindex=\x22-1\x22 name=\x22scode2\x22><option value=\x22\x22>Select One</option>'
+
+                                                        var options = ''
+                                                        {% for item in items %}
+
+                                                          options = options + '<option value=\x22{{ item }}\x22>{{ item }}</option>'
+                                                          {% endfor %}
+
+                                                        var select_final =  select_combo_start + options + select_combo_end
+
+                                                              $("#add_row").click(function(){
+                                                        $('#addr'+i).html('<td class=\x22a-center\x22><input type=\x22checkbox\x22 class=\x22flat\x22 name=\x22check\x22 '+i+' ></td><td>'+ (i+1) + '</td>' + select_final + '<td><input  name=\x22part'+ i + '\x22 type=\x22text\x22 placeholder=\x22Add particulars\x22  class=\x22form-control input-md\x22></td><td><input name=\x22qty'+i+'\x22 type=\x22text\x22 placeholder=\x22Add Quantity\x22 class=\x22form-control input-md\x22> </td><td><input  name=\x22rate'+i+'\x22 type=\x22text\x22 placeholder=\x22Add rate\x22  class=\x22form-control input-md\x22></td><td><input  name=\x22am'+i+ '\x22 type=\x22text\x22 placeholder=\x22Add amount\x22  class=\x22form-control input-md\x22 ></td><td>');
+
+                                                        $('#tab_logic').append('<tr  class=\x22even pointer\x22 id=\x22addr'+(i+1)+'\x22></tr>');
+                                                        i++;
+                                                           });
+                                                              $("#delete_row").click(function(){
+                                                           if(i>1){
+                                                           $("#addr"+(i-1)).html('');
+                                                           i--;
+                                                           }
+                                                              });
+
+                                                         });
+
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Submit" >
+                                    </form>
+                                    <div class="x_title" style="display:in-block;">
+                                                <div class="x_title"><h4 style="display: inline; float:left">Image
+                                                    Library</h4>
+                                                    <div align="right" class="row">
+                                                        <div style="display: inline; ">
+                                                            <form method="POST" action="upload"
+                                                                  enctype="multipart/form-data"
+                                                                  class="form-inline form-horizontal"
+                                                                  style="float: right; padding: 5px;">
+                                                                {% csrf_token %}
+                                                                <div class="btn-group">
+                                                                    <div class="fileUpload btn btn-primary" style="background-color:#5F1460; border: 1px solid #5F1460">
+                                                    <span class="fa fa-camera"
+                                                          style="color:white;vertical-align:middle"></span><span> Attach Front Pic</span>
+                                                                        <input id="voucher" type="hidden" name="voucher_id"
+                                                                               value="{{ voucher_id }}">
+                                                                        <input id="asset-front" type="hidden"
+                                                                               name="folder_type"
+                                                                               value="asset-front">
+                                                                        <input type="file" name="files" class="upload"
+                                                                               value="asset_front"
+                                                                               style="display: inline;"
+                                                                               multiple></div>
+                                                                    <button type="submit" value="upload"
+                                                                            class="fileUpload btn btn-success"
+                                                                            style="display: inline; background-color:#800080; border: 1px solid #800080;">
+                                                    <span class="fa fa-upload"
+                                                          style="color:white;vertical-align:middle"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                            <form id="lib" method="POST" action="upload"
+                                                                  enctype="multipart/form-data"
+                                                                  class="form-inline form-horizontal"
+                                                                  style="float: right; padding: 5px;">
+                                                                {% csrf_token %}
+                                                                <div class="btn-group">
+                                                                    <div class="fileUpload btn btn-primary"
+                                                                         style="background-color:#348017; border: 1px solid #348017">
+                                                                <span class="fa fa-qrcode"
+                                                                      style="color:white;vertical-align:middle;"></span><span>  Attach library
+                                                            </span>
+                                                                        <input type="hidden" name="voucher_id"
+                                                                               value="{{ voucher_id }}">
+
+                                                                        <input type="file" name="files" class="upload"
+                                                                               value="asset_lib"
+                                                                               style="display: inline;"
+                                                                               multiple>
+                                                                    </div>
+                                                                    <input id="asset-lib" type="hidden" name="folder_type"
+                                                                           value="asset-lib">
+                                                                    <button type="submit" value="upload"
+                                                                            class="fileUpload btn btn-success"
+                                                                            style="display: inline; background-color:#254117; border: 1px solid #254117;">
+                                                                <span class="fa fa-upload"
+                                                                      style="color:white;vertical-align:middle"></span>
+
+                                                                    </button>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="demo-gallery">
+                                                    {% static "" as baseUrl %}
+                                                    <ul id="lightgallery" class="list-unstyled row">
+                                                        {% for imagefront_list in imagefront_listt %}
+                                                        <li class="col-xs-6 col-sm-4 col-md-3"
+                                                            data-responsive="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 480, {% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %} 800"
+                                                            data-src="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %}"
+                                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                                            <a href="">
+
+                                                                <img style="height: 120px; width: 200px;"
+                                                                     class="img-responsive"
+                                                                     src="{% with 'asset/front/'|add:voucher_id|add:'/'|add:imagefront_list  as image_static %}{% static image_static %} {% endwith %}">
+
+                                                            </a>
+                                                        </li>
+                                                        {% endfor %}
+                                                        {% for im in imagelib_list %}
+                                                        <li class="col-xs-6 col-sm-4 col-md-3"
+
+                                                            data-responsive="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 480, {% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 800"
+                                                            data-src="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %}"
+                                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                                            <a href="">
+                                                                <img class="img-responsive"
+                                                                     style="height: 120px; width: 200px;"
+                                                                     src="{% with 'asset/lib/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %}">
+                                                            </a>
+                                                        </li>
+                                                        {% endfor %}
+
+                                                    </ul>
+                                                </div>
+                                                <form id="bill" method="POST" action="upload" enctype="multipart/form-data"
+                                                      class="form-inline">
+                                                    {% csrf_token %}
+                                                    <div class="x_title">
+                                                        <div align="right">
+
+                                                            <h4 style="display: inline; float:left">Bill Library </h4>
+                                                            <div class="btn-group">
+                                                                <div class="fileUpload btn btn-primary"
+                                                                     style="background-color:#3B3131; border: 1px solid #3B3131;">
+                                                                    <input id="voucher_bill" type="hidden" name="voucher_id"
+                                                                           value="{{ voucher_id }}">
+                                                                    <input id="asset_bills" type="hidden" name="folder_type"
+                                                                           value="asset_bills">
+                                                    <span class="fa fa-qrcode"
+                                                          style="color:white;vertical-align:middle"></span><span>  Attach Bill
+                                                </span>
+                                                                    <input id="upload_bill" type="file" name="files"
+                                                                           class="upload"
+                                                                           style="display: inline;"
+                                                                           multiple>
+                                                                </div>
+                                                                <button type="submit" value="upload"
+                                                                        class="fileUpload btn btn-primary"
+                                                                        style="display: inline;background-color:#EAC117; border: 1px solid #EAC117;">
+                                                    <span class="fa fa-upload"
+                                                          style="color:white;vertical-align:middle"></span>
+
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="demo-gallery">
+                                                    {% static "" as baseUrl %}
+                                                    <ul id="lightgallery1" class="list-unstyled row">
+                                                        {% for im in imagebill_list %}
+                                                        <li class="col-xs-6 col-sm-4 col-md-3"
+                                                            data-responsive="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %} {% endwith %} 375, {% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %} 480, {% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %} 800"
+                                                            data-src="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %}"
+                                                            data-sub-html="<h4>{{ voucher_id }}</h4>">
+                                                            <a href="">
+                                                                <img class="img-responsive"
+                                                                     style="height: 120px; width: 200px;"
+                                                                     src="{% with 'asset/bills/'|add:voucher_id|add:'/'|add:im as image_static %}{% static image_static %}{% endwith %}">
+                                                            </a>
+                                                        </li>
+                                                        {% endfor %}
+
+                                                    </ul>
+                                                </div>
+                                                <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            $('#lightgallery').lightGallery();
+                                            $('#lightgallery1').lightGallery();
+                                        });
+
+
+
+
+
+                                                </script>
+
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /page content -->
+            </div>
+        </div>
+
+    </div>
+</body>
+{% include 'form_advanced.html' %}
+{% include 'table.html' %}
+{% include 'footer.html' %}
+</html>

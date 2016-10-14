@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+
+<html lang="en">
+
+{% include 'head.html' %}
+<script>
+    $(document).on('click', 'input', function () {
+
+    clicked = this.id;
+     var matches = clicked.match(/\d+/g);
+      if (matches != null) {
+
+          qtyid = 'id_tmpplinvoicedet_set-' + matches + '-qty'
+          rateid = 'id_tmpplinvoicedet_set-' + matches + '-rate'
+          amountid = 'id_tmpplinvoicedet_set-' + matches + '-itemtot'
+
+
+         var final = "#" + rateid + "," + "#" + qtyid
+			$(final).keyup(function () {
+
+          $('#' + amountid).val($('#' + qtyid).val() * $('#' + rateid).val());
+
+        var a1 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-0-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-0-itemtot').val());
+        var a2 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-1-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-1-itemtot').val());
+        var a3 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-3-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-2-itemtot').val());
+        var a4 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-4-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-3-itemtot').val());
+        var a5 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-5-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-4-itemtot').val());
+        var a6 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-6-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-5-itemtot').val());
+        var a7 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-7-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-6-itemtot').val());
+        var a8 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-8-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-7-itemtot').val());
+        var a9 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-9-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-8-itemtot').val());
+        var a10 = (isNaN(parseInt($('#id_tmpplinvoicedet_set-9-itemtot').val()))) ? 0 : parseInt($('#id_tmpplinvoicedet_set-9-itemtot').val());
+
+      $('#id_net_amt').val(a1+a2+a3+a4+a5+a6+a7+a8+a9+a10);
+
+      });
+}
+
+});
+
+
+</script>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+    <!--<div class="content-wrapper">-->
+    <div class="container body">
+        <div class="main_container">
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <!-- Toolbar -->
+
+                            <div align="left">
+
+
+                                <a id="new" type="submit" class="btn btn-round btn-primary" name="new"
+                                   style="background:#A43780;border-color:#A43780;">
+                                    <span class="fa fa-plus" style="color:white;vertical-align:middle"></span>
+                                    New
+                                </a>
+
+
+                                <a id="last" type="submit" class="btn btn-round btn-primary" title="Next Voucher"
+                                   name="last"
+                                   style="background:#A43780;border-color:#A43780; color:white;align:left;">
+                                    <span class="glyphicon glyphicon-fast-backward"></span>
+                                </a>
+
+                                <a id="previous" type="submit" class="btn btn-round btn-primary" title="Next Voucher"
+                                   name="previous"
+                                   style="background:#A43780;border-color:#A43780; color:white;align:left;">
+                                    <span class="glyphicon glyphicon-backward"></span>
+                                </a>
+
+                                <a id="next" type="submit" class="btn btn-round btn-primary" title="Next Voucher"
+                                   name="next"
+                                   style="background:#A43780;border-color:#A43780; color:white;align:left;">
+                                    <span class="glyphicon glyphicon-forward"></span>
+                                </a>
+
+                                <a id="top" type="submit" class="btn btn-round btn-primary" title="Next Voucher"
+                                   name="top"
+                                   style="background:#A43780;border-color:#A43780; color:white;align:left;">
+                                    <span class="glyphicon glyphicon-fast-forward"></span>
+                                </a>
+
+                                <a id="save" type="submit" class="btn btn-round btn-primary"
+                                   style="background:#A43780;border-color:#A43780;">
+                                    <span class="fa fa-save" style="color:white;vertical-align:middle"></span>
+                                    Save
+                                </a>
+                                <button type="button" class="btn btn-round btn-primary"
+                                        style="background:#f0ad4e;border-color:#f0ad4e;text-align:center"
+                                        onclick="window.print();">
+                                    <span class="fa fa-print" style="color:white;vertical-align:middle"></span>
+                                    Print
+                                </button>
+
+                                <a id="post" type="submit" class="btn btn-round btn-primary"
+                                   style="background:#008000;border-color:#008000;">
+                                    <span class="fa fa-remove" style="color:white;vertical-align:middle"></span>
+                                    Post
+                                </a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <!--  Invoice  -->
+                        <div class="x_title">
+                            <h2>Invoice</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <p class="text-muted font-13 m-b-30">
+                            </p>
+
+                            <form class="form-horizontal form-label-left input_mask" action="/main/" method="POST"
+                                  id="myForm">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="fieldWrapper">
+                                        <label class="control-label col-md-2 col-sm-3 col-xs-12">Date </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <fieldset>
+                                                <div class="control-group">
+                                                    <div class="controls">
+                                                        <div class=" xdisplay_inputx form-group has-feedback">
+                                                            <!--<input type="text"-->
+                                                            <!--class="form-control has-feedback-left"-->
+                                                            <!--id="single_cal1" placeholder="Select Date" value=""-->
+                                                            <!--aria-describedby="inputSuccess2Status" required>-->
+                                                            {{ form.voucher_date }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                    <label class="control-label col-md-2 col-sm-3 col-xs-12">Item</label>
+                                    <div class="col-md-5 col-sm-3 col-xs-12">
+                                        <div class="form-group">
+                                            <!--<select class="select2_single form-control" tabindex="-1" id="new_item">-->
+                                            {{ form.acct }}
+                                            <!--<option value="">Select One</option>-->
+                                            <!--{% for item in items %}-->
+                                            <!--<option value="{{ item }}">{{ item }}</option>-->
+                                            <!--{% endfor %}-->
+                                            <!--</select>-->
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="control-label col-md-2 col-sm-3 col-xs-12">Voucher ID </label>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <!--<input type="text" class="'id': 'single_cal1', " name="new_vid"  id="id_new_vid"-->
+                                        <!--placeholder="{{ voucher_id }}">-->
+                                        {{ form.voucher_id }}
+                                    </div>
+
+
+                                    <label class="control-label col-md-2 col-sm-3 col-xs-12">Positions</label>
+                                    <div class="col-md-5 col-sm-3 col-xs-12">
+                                        <div class="form-group">
+                                            <!--<select class="select2_single form-control" tabindex="-1">-->
+                                            <!--<option value="">Select One</option>-->
+                                            <!--{% for pos in positions %}-->
+                                            <!--<option value="{{ pos }}">{{ pos }}</option>-->
+                                            <!--{% endfor %}-->
+                                            <!--</select>-->
+                                            {{ form.pos_code }}
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-3 col-xs-12">Particulars</label>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <!--<input type="text" class="form-control"-->
+                                        <!--placeholder="Add Particulars here" id="id_new_parc" >-->
+                                        {{ form.particulars }}
+                                    </div>
+
+                                    <label class="control-label col-md-2 col-sm-3 col-xs-12">Custodians</label>
+                                    <div class="col-md-5 col-sm-3 col-xs-12">
+                                        <div class="form-group">
+                                            <!--<select class="select2_single form-control" tabindex="-1">-->
+                                            <!--<option value="">Select One</option>-->
+                                            <!--{% for cus in custodian %}-->
+                                            <!--<option value="{{ cus }}">{{ cus }}</option>-->
+                                            <!--{% endfor %}-->
+                                            <!--</select>-->
+                                            {{ form.cust }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p></p>
+                                </div>
+                                <div class="form-group">
+                                    <p></p>
+                                </div>
+<!--#***************************************************-->
+                                        <!--Table for bulk-->
+                                        <!--***************************************************-->
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                            <div class="x_content">
+                                                {{ formset.management_form }}
+                                                {{ formset.non_form_errors.as_ul }}
+                                                <table class="table table-striped responsive-utilities jambo_table bulk_action form"
+                                                       id="formset" style="background-color:#d0ffff;">
+                                                    <thead style="background-color:#9df0e0;;color: #73879C">
+                                                    {% for form in formset.forms %}
+                                                        {% if forloop.first %}
+                                                        <thead>
+                                                        <tr class="headings">
+                                                            {% for field in form.visible_fields %}
+                                                            <th>{{ field.label|capfirst }}</th>
+                                                            {% endfor %}
+                                                        </tr>
+                                                        </thead>
+                                                        {% endif %}
+
+                                                    <tbody>
+                                                    <tr class="no_error tablerow" >
+                                                        {% for field in form.visible_fields %}
+                                                        <td class="a-center ">
+                                                            {# Include the hidden fields in the form #}
+                                                            {% if forloop.first %}
+                                                            {% for hidden in form.hidden_fields %}
+                                                            {{ hidden }}
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                            {{ field.errors.as_ul }}
+                                                            {{ field }}
+                                                        </td>
+
+                                                        {% endfor %}
+                                                    </tr>
+
+                                                    {% endfor %}
+                                                    {{ formtotal }}
+                                                    </tbody>
+
+                                                </table>
+                                                <div style="width:200px;height:100px" align="right"></div>
+                                                    <input type="button" value="Add More" id="add_more" class="btn btn-default btn-primary pull-left">
+
+
+                                                <br><br><br>
+                                            </div>
+                                        </div>
+                                <input type="submit" name="submit" id="ssub">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /page content -->
+    </div>
+    <!--</div>-->
+
+</div>
+</body>
+<script>
+
+                                                        $('#add_more').click(function() {
+                                                            cloneMore('tr.tablerow:last', 'service');
+                                                        });
+                                                        $(document).ready(function(){
+                                                                $('#qty').keyup(calculate);
+                                                                $('#rate').keyup(calculate);
+                                                            });
+                                                            function calculate(e)
+                                                            {
+                                                                $('#amount').val($('#qty').val() * $('#rate').val());
+}
+
+function cloneMore(selector, type) {
+    var newElement = $(selector).clone(true);
+    var total = $('#id_' + type + '-TOTAL_FORMS').val();
+    newElement.find(':input').each(function() {
+        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+        var id = 'id_' + name;
+        $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    });
+    newElement.find('label').each(function() {
+        var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('for', newFor);
+    });
+    total++;
+    $('#id_' + type + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+}
+
+
+//This is where we submit the form
+
+
+    var frm = $('#myForm');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                    alert('yo!')
+            },
+            error: function(data) {
+                alert('go!')
+            }
+        });
+        return false;
+    });
+
+</script>
+{% include 'form_advanced.html' %}
+{% include 'table.html' %}
+{% include 'footer.html' %}
+</html>
